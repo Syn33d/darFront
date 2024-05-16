@@ -119,7 +119,7 @@ body {
   color: #000000;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 920px) {
 
   /* Masquer la navbar normale */
   .navbar .wrapper {
@@ -144,6 +144,11 @@ body {
     /* Centre verticalement */
     width: auto;
     height: auto;
+    position: fixed;
+    top: 35px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
   }
 
   .nav-group {
@@ -156,6 +161,11 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    position: fixed;
+    top: 85px;
+    right: 0;;
+    width: 100%;
+    padding: 10px;
   }
 
   .nav-menu__item {
@@ -163,7 +173,6 @@ body {
   }
 
   .social-icons {
-    flex-direction: column;
     margin-left: 0;
   }
 
@@ -189,7 +198,6 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    outline: none;
   }
 
   .menu-toggle .burger {
@@ -227,6 +235,11 @@ body {
     /* Centre verticalement */
     width: auto;
     height: auto;
+    position: fixed;
+    top: 25px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
   }
 
   .nav-group {
@@ -239,6 +252,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    top: 65px;
   }
 
   .nav-menu__item {
@@ -246,8 +260,8 @@ body {
   }
 
   .social-icons {
-    flex-direction: column;
     margin-left: 0;
+    margin-top: -70%;
   }
 
   /* Afficher le bouton de menu burger */
@@ -262,7 +276,6 @@ body {
     cursor: pointer;
     padding: 0;
     z-index: 10;
-    outline: none;
   }
 
   .menu-toggle .burger {
@@ -272,6 +285,10 @@ body {
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+  }
+
+  .menu-toggle.open {
+    height: auto; /* Ajuster la hauteur automatiquement */
   }
 }
 

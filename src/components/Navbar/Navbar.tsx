@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./test.css";
+import "./testNavBar.css";
 import logo from "/logo.png";
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMediumOrSmaller(window.innerWidth <= 1300); // Définissez la largeur limite pour les écrans mobiles
+            setIsMediumOrSmaller(window.innerWidth <= 920); // Définissez la largeur limite pour les écrans mobiles
         };
 
         handleResize(); // Vérifiez la taille de l'écran lors du montage du composant
@@ -146,4 +146,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
