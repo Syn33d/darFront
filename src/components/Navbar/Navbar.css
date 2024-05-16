@@ -1,0 +1,261 @@
+/* Styles de base pour la navbar */
+.navbar {
+  background-color: #F9F6EF;
+  color: #333;
+  padding: 0.75rem 3rem;
+  align-items: center;
+  font-size: 1.25em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+body {
+  font-family: 'Satoshi', light;
+  width: 100vw;
+}
+
+.navbar.active {
+  background-color: #555;
+}
+
+/* Wrapper pour le contenu de la navbar */
+.wrapper {
+  align-items: center;
+}
+
+/* Disposition de la partie supérieure de la navbar */
+.top__wrapper {
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: -1.75vw;
+  margin-top: -1rem;
+}
+
+/* Styles pour le logo */
+.logo img {
+  /* Ajustez la largeur du logo */
+  height: auto;
+  width: 15%;
+}
+
+/* Styles pour le groupe de navigation et réseaux sociaux */
+.nav-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94vw;
+}
+
+.navbar-underline {
+  width: 94vw;
+  border: none;
+  border-top: 2px solid #444;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Styles pour le menu de navigation */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu__item {
+  position: relative;
+}
+
+.nav-menu__link {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.material-symbols-outlined {
+  margin-right: 0.5rem;
+}
+
+/* Styles pour les icônes sociales */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  color: gray;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: currentColor;
+}
+
+.social-icon .fa-pinterest:hover {
+  color: #E60023;
+}
+
+.social-icon .fa-instagram:hover {
+  color: #C13584;
+}
+
+.social-icon .fa-tiktok:hover {
+  color: #000000;
+}
+
+.social-icon .fa-times:hover {
+  color: #000000;
+}
+
+@media (max-width: 1300px) {
+  .navbar {
+    padding: 1rem;
+    width: auto;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    /* Centre horizontalement */
+    align-items: center;
+    /* Centre verticalement */
+    width: auto;
+    height: auto;
+  }
+
+  .nav-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-menu__item {
+    margin-right: 0;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    margin-left: 0;
+  }
+}
+
+/* Styles pour les écrans de taille moyenne (tablette) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    width: auto;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    /* Centre horizontalement */
+    align-items: center;
+    /* Centre verticalement */
+    width: auto;
+    height: auto;
+  }
+
+  .nav-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-menu__item {
+    margin-right: 0;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    margin-left: 0;
+  }
+}
+
+/* Styles pour les petits écrans (mobile) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+    width: auto;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    /* Centre horizontalement */
+    align-items: center;
+    /* Centre verticalement */
+    width: auto;
+    height: auto;
+  }
+
+  .nav-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-menu__item {
+    margin-right: 0;
+  }
+}
