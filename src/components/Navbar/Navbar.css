@@ -120,9 +120,10 @@ body {
 }
 
 @media (max-width: 1300px) {
-  .navbar {
-    padding: 1rem;
-    width: auto;
+
+  /* Masquer la navbar normale */
+  .navbar .wrapper {
+    display: none;
   }
 
   .wrapper {
@@ -164,14 +165,48 @@ body {
   .social-icons {
     flex-direction: column;
     margin-left: 0;
+  }
+
+  .menu-toggle,
+  .menu-toggle:focus,
+  .menu-toggle:active,
+  .menu-toggle:hover,
+  .menu-toggle:visited {
+    outline: none;
+  }
+
+  /* Afficher le bouton de menu burger */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .menu-toggle .burger {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 2px 0;
+    transition: all 0.3s linear;
   }
 }
 
 /* Styles pour les écrans de taille moyenne (tablette) */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
-    width: auto;
+
+  /* Masquer la navbar normale */
+  .navbar .wrapper {
+    display: none;
   }
 
   .wrapper {
@@ -213,6 +248,30 @@ body {
   .social-icons {
     flex-direction: column;
     margin-left: 0;
+  }
+
+  /* Afficher le bouton de menu burger */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    outline: none;
+  }
+
+  .menu-toggle .burger {
+    width: 2rem;
+    height: 0.25rem;
+    background: #333;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
   }
 }
 
@@ -257,5 +316,29 @@ body {
 
   .nav-menu__item {
     margin-right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1500;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* Styles pour le menu burger */
+  .menu-toggle .burger {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
   }
 }
