@@ -1,0 +1,72 @@
+body {
+    height: 100vh;
+  
+    background-color: #F9F6EF;
+  }
+  
+  .contact-form-container {
+    width: 78vw;
+    height: 50vh;
+  }
+  
+  h1 {
+    font-family: 'Le Murmure';
+  }
+  
+  p {
+    margin-top: -3vh;
+    margin-bottom: 5vh;
+  }
+  
+  label {
+    text-align: left;
+    display: block;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .name-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .field-group {
+    margin-bottom: 1vh;
+  }
+  
+  .name-fields .field-group {
+    width: 33vw;
+    margin-right: 4vw;
+  }
+  
+  .contact-form input[type="email"],
+  .contact-form input[type="text"],
+  .contact-form textarea {
+    width: 77.25vw;
+    max-width: 110%;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background-color: #F9F6EF;
+  }
+  
+  .required {
+    color: #EA5923;
+  }
+  
+  .contact-form textarea {
+    height: 10vh;
+  }
+  
+  .contact-form button {
+    width: 78vw;
+    color: black;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0.75px solid var(--Noir, #000);
+    background: rgba(255, 255, 255, 0.00);
+  }

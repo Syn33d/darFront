@@ -27,9 +27,10 @@ const Footer = () => {
                 <div className="footer-section">
                     <h4>PROTECTION DES DONNÉES</h4>
                 </div>
-            </div>
-            <div className="footer-bottom">
-                <p>&copy; 2024 DAR. Tous droits réservés.</p>
+                
+                <div className="footer-side">
+                    <p>&copy; 2024-DAR.</p>
+                </div>
             </div>
         </footer>
     )
