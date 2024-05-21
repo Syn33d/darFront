@@ -1,163 +1,122 @@
-import * as Tabs from '@radix-ui/react-tabs';
-import './styles.css';
-
-//Ce document gèrera le login, le register et la modification du profile
-
-//TODO
-//Mettre un if pour les utilisateurs connectés
+import { useState } from 'react';
+import './Authentification.css';
+import axios from 'axios';
 
 function Authentification() {
+  const [isLogin, setIsLogin] = useState(true);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-    function modifMotDePasse() {
-        return (
-            <Tabs.Root className="TabsRoot" defaultValue="tab1">
-                <Tabs.List className="TabsList" aria-label="Manage your account">
-                    <Tabs.Trigger className="TabsTrigger" value="tab1">
-                        Account
-                    </Tabs.Trigger>
-                    <Tabs.Trigger className="TabsTrigger" value="tab2">
-                        Password
-                    </Tabs.Trigger>
-                </Tabs.List>
-                <Tabs.Content className="TabsContent" value="tab1">
-                    <p className="Text">Make changes to your account here. Click save when you're done.</p>
-                    <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="name">
-                            Name
-                        </label>
-                        <input className="Input" id="name" defaultValue="Pedro Duarte" />
-                    </fieldset>
-                    <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="username">
-                            Username
-                        </label>
-                        <input className="Input" id="username" defaultValue="@peduarte" />
-                    </fieldset>
-                    <div style={{ display: 'flex', marginTop: 20, justifyContent: 'flex-end' }}>
-                        <button className="Button green">Save changes</button>
-                    </div>
-                </Tabs.Content>
-                <Tabs.Content className="TabsContent" value="tab2">
-                    <p className="Text">Change your password here. After saving, you'll be logged out.</p>
-                    <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="currentPassword">
-                            Current password
-                        </label>
-                        <input className="Input" id="currentPassword" type="password" />
-                    </fieldset>
-                    <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="newPassword">
-                            New password
-                        </label>
-                        <input className="Input" id="newPassword" type="password" />
-                    </fieldset>
-                    <fieldset className="Fieldset">
-                        <label className="Label" htmlFor="confirmPassword">
-                            Confirm password
-                        </label>
-                        <input className="Input" id="confirmPassword" type="password" />
-                    </fieldset>
-                    <div style={{ display: 'flex', marginTop: 20, justifyContent: 'flex-end' }}>
-                        <button className="Button green">Change password</button>
-                    </div>
-                </Tabs.Content>
-            </Tabs.Root>
-        );
+  const handleLoginClick = () => {
+    setIsLogin(true);
+    const loginElement = document.getElementById('login') as HTMLInputElement;
+    if (loginElement) {
+      loginElement.checked = true;
     }
+  };
 
-    function login() {
-        return (
-            <Tabs.Root className="TabsRoot" defaultValue="tab1">
-                <Tabs.List className="TabsList" aria-label="Login">
-                    <Tabs.Trigger className="TabsTrigger" value="tab1">
-                        Login
-                    </Tabs.Trigger>
-                    <Tabs.Trigger className="TabsTrigger" value="tab2">
-                        Register
-                    </Tabs.Trigger>
-                </Tabs.List>
-                <Tabs.Content className="TabsContent" value="tab1">
-                    <p className="Text">Connectez-vous à votre compte ici.</p>
-
-                    <form>
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="identifiant">
-                                identifiant
-                            </label>
-                            <input className="Input" id="identifiant" />
-                        </fieldset>
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="password">
-                                Password
-                            </label>
-                            <input className="Input" id="password" type="password" />
-                        </fieldset>
-                        <div style={{ display: 'flex', marginTop: 20, justifyContent: 'flex-end' }}>
-                            <button className="Button green">Se connecter</button>
-                        </div>
-                    </form>
-                </Tabs.Content>
-
-                <Tabs.Content className="TabsContent" value="tab2">
-                    <p className="Text">Rejoignez la communauté DAR ici.</p>
-
-                    <form>
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="nom">
-                                Nom
-                            </label>
-                            <input className="Input" id="nom" />
-                        </fieldset>
-
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="prenom">
-                                Prénom
-                            </label>
-                        </fieldset>
-
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="email">
-                                Email
-                            </label>
-                            <input className="Input" id="email" />
-                        </fieldset>
-
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="adresse">
-                                Adresse
-                            </label>
-                            <input className="Input" id="adresse" />
-                        </fieldset>
-
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="ville">
-                                Ville
-                            </label>
-                            <input className="Input" id="ville" />
-                        </fieldset>
-
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="Code Postal">
-                                Code Postal
-                            </label>
-                            <input className="Input" id="Code Postal" />
-                        </fieldset>
-
-                        <fieldset className="Fieldset">
-                            <label className="Label" htmlFor="password">
-                                Password
-                            </label>
-                            <input className="Input" id="password" type="password" />
-                        </fieldset>
-
-                        <div style={{ display: 'flex', marginTop: 20, justifyContent: 'flex-end' }}>
-                            <button className="Button green">Créer son compte</button>
-                        </div>
-                    </form>
-                </Tabs.Content>
-            </Tabs.Root>
-        )
+  const handleSignupClick = () => {
+    setIsLogin(false);
+    const signupElement = document.getElementById('signup') as HTMLInputElement;
+    if (signupElement) {
+      signupElement.checked = true;
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isLogin) {
+      try {
+        const response = await axios.post('http://localhost:3000/auth/login', {
+          username,
+          password
+        });
+        localStorage.setItem('token', response.data.token);
+        alert('Login successful');
+      } catch (error) {
+        console.error(error);
+        alert('Login failed');
+      }
+    } else {
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+      try {
+        const response = await axios.post('http://localhost:3000/auth/register', {
+          username,
+          password
+        });
+        alert('Signup successful');
+      } catch (error) {
+        console.error(error);
+        alert('Signup failed');
+      }
+    }
+  };
+
+  return (
+    <>
+      <div className='logo'>
+        <img src='/logo.png' alt='logo' />
+      </div>
+      <section className="main">
+        <div className="form_wrapper">
+          <input type="radio" className="radio" name="radio" id="login" defaultChecked />
+          <input type="radio" className="radio" name="radio" id="signup" />
+          <div className="tile">
+            <h3 className="login">Login Form</h3>
+            <h3 className="signup">Signup Form</h3>
+          </div>
+
+          <label className="tab login_tab" htmlFor="login" onClick={handleLoginClick}>
+            Login
+          </label>
+
+          <label className="tab signup_tab" htmlFor="signup" onClick={handleSignupClick}>
+            Signup
+          </label>
+          <span className="shape"></span>
+          <form className="form_wrap" onSubmit={handleSubmit}>
+            <div className="form_fild login_form">
+              <div className="input_group">
+                <input type="username" className="input" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+              </div>
+              <div className="input_group">
+                <input type="password" className="input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              </div>
+
+              <a href="#forgot" className="forgot">Forgot password?</a>
+
+              <input type="submit" className="btn" value="Login" />
+
+              <div className="not_mem">
+                <label htmlFor="signup">Not a member? <a href="#" onClick={handleSignupClick}> Signup now</a></label>
+              </div>
+
+            </div>
+
+            <div className="form_fild signup_form ">
+              <div className="input_group">
+                <input type="username" className="input" placeholder="username Address" value={username} onChange={(e) => setUsername(e.target.value)} />
+              </div>
+              <div className="input_group">
+                <input type="password" className="input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              </div>
+
+              <div className="input_group">
+                <input type="password" className="input" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+              </div>
+
+              <input type="submit" className="btn" value="Signup" />
+
+            </div>
+          </form>
+        </div>
+      </section>
+    </>
+  );
 }
 
 export default Authentification;

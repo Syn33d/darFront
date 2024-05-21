@@ -1,128 +1,259 @@
-@import '@radix-ui/colors/black-alpha.css';
-@import '@radix-ui/colors/green.css';
-@import '@radix-ui/colors/mauve.css';
-@import '@radix-ui/colors/violet.css';
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
-/* reset */
-button,
-fieldset,
-input {
-  all: unset;
-}
-
-.TabsRoot {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  box-shadow: 0 2px 10px var(--black-a4);
-}
-
-.TabsList {
-  flex-shrink: 0;
-  display: flex;
-  border-bottom: 1px solid var(--mauve-6);
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #222;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: #eed5e4;
+    background: radial-gradient(circle, #eed5e4 63%, #f39b8e 100%);
+    background-size: 100vw 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 340px;
+    width: 100vw;
 }
 
-.TabsTrigger {
-  font-family: inherit;
-  background-color: white;
-  padding: 0 20px;
-  height: 45px;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--mauve-11);
-  user-select: none;
-}
-.TabsTrigger:first-child {
-  border-top-left-radius: 6px;
-}
-.TabsTrigger:last-child {
-  border-top-right-radius: 6px;
-}
-.TabsTrigger:hover {
-  color: var(--violet-11);
-}
-.TabsTrigger[data-state='active'] {
-  color: var(--violet-11);
-  box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;
-}
-.TabsTrigger:focus {
-  position: relative;
-  box-shadow: 0 0 0 2px black;
+* {
+    box-sizing: border-box;
 }
 
-.TabsContent {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: white;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  outline: none;
-}
-.TabsContent:focus {
-  box-shadow: 0 0 0 2px black;
+* ::before,
+* ::after {
+    box-sizing: border-box;
 }
 
-.Text {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: var(--mauve-11);
-  font-size: 15px;
-  line-height: 1.5;
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    height: 30vh;
+    width: 20vw;
 }
 
-.Fieldset {
-  margin-bottom: 15px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.main {
+    width: 30vw;
+    border-radius: 3px;
+    padding: 30px;
+    position: relative;
+    display: flex;
 }
 
-.Label {
-  font-size: 13px;
-  line-height: 1;
-  margin-bottom: 10px;
-  color: var(--violet-12);
-  display: block;
+
+.main .form_wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.Input {
-  flex: 1 0 auto;
-  border-radius: 4px;
-  padding: 0 10px;
-  font-size: 15px;
-  line-height: 1;
-  color: var(--violet-11);
-  box-shadow: 0 0 0 1px var(--violet-7);
-  height: 35px;
-}
-.Input:focus {
-  box-shadow: 0 0 0 2px var(--violet-8);
+.main .form_wrapper .tile {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
 }
 
-.Button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 0 15px;
-  font-size: 15px;
-  line-height: 1;
-  font-weight: 500;
-  height: 35px;
+.main .form_wrapper .tile h3 {
+    font-size: 22px;
+    margin: 0px;
+    transition: all 0.3s ease;
+    font-family: 'Le Murmure';
 }
-.Button.green {
-  background-color: var(--green-4);
-  color: var(--green-11);
+
+.main .form_wrapper .radio {
+    display: none;
 }
-.Button.green:hover {
-  background-color: var(--green-5);
+
+.main .form_wrapper .tab {
+    width: 50%;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    user-select: none;
+    border: solid 1px #CCC;
 }
-.Button.green:focus {
-  box-shadow: 0 0 0 2px var(--green-7);
+
+.main .form_wrapper .tab.login_tab {
+    border-right: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.main .form_wrapper .tab.signup_tab {
+    border-left: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.main .form_wrapper .shape {
+    background: #f39b8e;
+    background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+    width: 50%;
+    height: calc(40px - 1px);
+    border-radius: 5px;
+    position: absolute;
+    top: 55.5px;
+    left: 0px;
+    opacity: 0.9;
+    transition: all 0.4s ease;
+}
+
+.main .form_wrapper .shape:hover {
+    background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+}
+
+.main .form_wrapper #login:checked~.shape {
+    left: 0px;
+}
+
+.main .form_wrapper #login:checked~.login_tab {
+    border-color: transparent;
+    z-index: 1;
+    color: white;
+}
+
+.main .form_wrapper #login:checked~.tile .signup {
+    display: none;
+}
+
+.main .form_wrapper #login:checked~.form_wrap {
+    transform: translateX(0);
+}
+
+.main .form_wrapper #login:checked~.form_wrap .signup_form {
+    opacity: 0;
+}
+
+.main .form_wrapper #signup:checked~.shape {
+    left: 50%;
+}
+
+.main .form_wrapper #signup:checked~.signup_tab {
+    border-color: transparent;
+    z-index: 1;
+    color: white;
+}
+
+.main .form_wrapper #signup:checked~.tile .login {
+    display: none;
+}
+
+.main .form_wrapper #signup:checked~.form_wrap {
+    transform: translateX(-100%);
+}
+
+.main .form_wrapper #signup:checked~.form_wrap .login_form {
+    opacity: 0;
+}
+
+.main .form_wrapper a {
+    color: #EA5923  ;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+.main .form_wrapper a:hover {
+    color: #a03f1c;
+}
+
+.main .form_wrapper .form_wrap {
+    display: flex;
+    width: 100%;
+    flex: 0 0 100%;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.main .form_wrapper .form_wrap .form_fild {
+    width: 100%;
+    flex: 0 0 100%;
+    transition: all 0.5s ease;
+}
+
+.main .form_wrapper .form_wrap .form_fild .input_group {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.main .form_wrapper .form_wrap .form_fild .input_group .input {
+    border: solid #f1f1f1 2px;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s linear;
+}
+
+.main .form_wrapper .form_wrap .form_fild .input_group .input::placeholder {
+    color: #adadad;
+}
+
+.main .form_wrapper .form_wrap .form_fild .input_group .input:hover {
+    border-color: rgba(248, 66, 151, 0.3);
+}
+
+.main .form_wrapper .form_wrap .form_fild .input_group .input:focus {
+    border-color: rgba(248, 66, 151, 0.3);
+}
+
+.main .form_wrapper .form_wrap .form_fild .forgot {
+    display: block;
+    margin-bottom: 15px;
+    padding: 0px 2px;
+}
+
+.main .form_wrapper .form_wrap .form_fild .btn {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: white;
+    background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s linear;
+}
+
+.main .form_wrapper .form_wrap .form_fild .btn:hover {
+    background: linear-gradient(-90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+}
+
+.main .form_wrapper .form_wrap .form_fild .btn:active {
+    transform: scale(0.95);
+}
+
+.main .form_wrapper .form_wrap .form_fild .not_mem {
+    text-align: center;
+}
+
+.main .form_wrapper .form_wrap .form_fild .not_mem label span {
+    pointer-events: all;
+    color: #EA5923;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+.main .form_wrapper .form_wrap .form_fild .not_mem label span:hover {
+    color: #a03f1c;
 }
