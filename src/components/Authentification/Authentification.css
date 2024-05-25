@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 body {
-    font-family: "Poppins", sans-serif;
     font-size: 14px;
     color: #222;
     padding: 0px;
@@ -10,7 +9,7 @@ body {
     background: #eed5e4;
     background: radial-gradient(circle, #eed5e4 63%, #f39b8e 100%);
     background-size: 100vw 100vh;
-    height: 100vh;
+    height: calc(100vh - 24vh);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,14 +26,17 @@ body {
     box-sizing: border-box;
 }
 
-.logo {
+.logoLogin {
     display: flex;
-    justify-content: flex-start;
-    height: 30vh;
-    width: 20vw;
+    justify-content: space-around;
+    height: 20vh;
 }
 
-.main {
+.mainAuthPage {
+    height: 50vh;
+}
+
+.form {
     width: 30vw;
     border-radius: 3px;
     padding: 30px;
@@ -43,7 +45,7 @@ body {
 }
 
 
-.main .form_wrapper {
+.form .form_wrapper {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -53,25 +55,25 @@ body {
     overflow: hidden;
 }
 
-.main .form_wrapper .tile {
+.form .form_wrapper .tile {
     text-align: center;
     margin-bottom: 20px;
     width: 100%;
     overflow: hidden;
 }
 
-.main .form_wrapper .tile h3 {
+.form .form_wrapper .tile h3 {
     font-size: 22px;
     margin: 0px;
     transition: all 0.3s ease;
     font-family: 'Le Murmure';
 }
 
-.main .form_wrapper .radio {
+.form .form_wrapper .radio {
     display: none;
 }
 
-.main .form_wrapper .tab {
+.form .form_wrapper .tab {
     width: 50%;
     height: 45px;
     border-radius: 5px;
@@ -86,19 +88,19 @@ body {
     border: solid 1px #CCC;
 }
 
-.main .form_wrapper .tab.login_tab {
+.form .form_wrapper .tab.login_tab {
     border-right: none;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
 
-.main .form_wrapper .tab.signup_tab {
+.form .form_wrapper .tab.signup_tab {
     border-left: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
 
-.main .form_wrapper .shape {
+.form .form_wrapper .shape {
     background: #f39b8e;
     background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
     width: 50%;
@@ -111,83 +113,83 @@ body {
     transition: all 0.4s ease;
 }
 
-.main .form_wrapper .shape:hover {
+.form .form_wrapper .shape:hover {
     background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
 }
 
-.main .form_wrapper #login:checked~.shape {
+.form .form_wrapper #login:checked~.shape {
     left: 0px;
 }
 
-.main .form_wrapper #login:checked~.login_tab {
+.form .form_wrapper #login:checked~.login_tab {
     border-color: transparent;
     z-index: 1;
     color: white;
 }
 
-.main .form_wrapper #login:checked~.tile .signup {
+.form .form_wrapper #login:checked~.tile .signup {
     display: none;
 }
 
-.main .form_wrapper #login:checked~.form_wrap {
+.form .form_wrapper #login:checked~.form_wrap {
     transform: translateX(0);
 }
 
-.main .form_wrapper #login:checked~.form_wrap .signup_form {
+.form .form_wrapper #login:checked~.form_wrap .signup_form {
     opacity: 0;
 }
 
-.main .form_wrapper #signup:checked~.shape {
+.form .form_wrapper #signup:checked~.shape {
     left: 50%;
 }
 
-.main .form_wrapper #signup:checked~.signup_tab {
+.form .form_wrapper #signup:checked~.signup_tab {
     border-color: transparent;
     z-index: 1;
     color: white;
 }
 
-.main .form_wrapper #signup:checked~.tile .login {
+.form .form_wrapper #signup:checked~.tile .login {
     display: none;
 }
 
-.main .form_wrapper #signup:checked~.form_wrap {
+.form .form_wrapper #signup:checked~.form_wrap {
     transform: translateX(-100%);
 }
 
-.main .form_wrapper #signup:checked~.form_wrap .login_form {
+.form .form_wrapper #signup:checked~.form_wrap .login_form {
     opacity: 0;
 }
 
-.main .form_wrapper a {
+.form .form_wrapper a {
     color: #EA5923  ;
     text-decoration: none;
     transition: all 0.3s linear;
 }
 
-.main .form_wrapper a:hover {
+.form .form_wrapper a:hover {
     color: #a03f1c;
 }
 
-.main .form_wrapper .form_wrap {
+.form .form_wrapper .form_wrap {
     display: flex;
     width: 100%;
     flex: 0 0 100%;
     transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
-.main .form_wrapper .form_wrap .form_fild {
+.form .form_wrapper .form_wrap .form_fild {
     width: 100%;
     flex: 0 0 100%;
     transition: all 0.5s ease;
 }
 
-.main .form_wrapper .form_wrap .form_fild .input_group {
+.form .form_wrapper .form_wrap .form_fild .input_group {
     width: 100%;
     margin-bottom: 12px;
 }
 
-.main .form_wrapper .form_wrap .form_fild .input_group .input {
+.form .form_wrapper .form_wrap .form_fild .input_group .input {
     border: solid #f1f1f1 2px;
     border-radius: 5px;
     width: 100%;
@@ -199,25 +201,25 @@ body {
     transition: all 0.3s linear;
 }
 
-.main .form_wrapper .form_wrap .form_fild .input_group .input::placeholder {
+.form .form_wrapper .form_wrap .form_fild .input_group .input::placeholder {
     color: #adadad;
 }
 
-.main .form_wrapper .form_wrap .form_fild .input_group .input:hover {
+.form .form_wrapper .form_wrap .form_fild .input_group .input:hover {
     border-color: rgba(248, 66, 151, 0.3);
 }
 
-.main .form_wrapper .form_wrap .form_fild .input_group .input:focus {
+.form .form_wrapper .form_wrap .form_fild .input_group .input:focus {
     border-color: rgba(248, 66, 151, 0.3);
 }
 
-.main .form_wrapper .form_wrap .form_fild .forgot {
+.form .form_wrapper .form_wrap .form_fild .forgot {
     display: block;
     margin-bottom: 15px;
     padding: 0px 2px;
 }
 
-.main .form_wrapper .form_wrap .form_fild .btn {
+.form .form_wrapper .form_wrap .form_fild .btn {
     width: 100%;
     height: 40px;
     margin-bottom: 20px;
@@ -235,25 +237,25 @@ body {
     transition: all 0.3s linear;
 }
 
-.main .form_wrapper .form_wrap .form_fild .btn:hover {
+.form .form_wrapper .form_wrap .form_fild .btn:hover {
     background: linear-gradient(-90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
 }
 
-.main .form_wrapper .form_wrap .form_fild .btn:active {
+.form .form_wrapper .form_wrap .form_fild .btn:active {
     transform: scale(0.95);
 }
 
-.main .form_wrapper .form_wrap .form_fild .not_mem {
+.form .form_wrapper .form_wrap .form_fild .not_mem {
     text-align: center;
 }
 
-.main .form_wrapper .form_wrap .form_fild .not_mem label span {
+.form .form_wrapper .form_wrap .form_fild .not_mem label span {
     pointer-events: all;
     color: #EA5923;
     text-decoration: none;
     transition: all 0.3s linear;
 }
 
-.main .form_wrapper .form_wrap .form_fild .not_mem label span:hover {
+.form .form_wrapper .form_wrap .form_fild .not_mem label span:hover {
     color: #a03f1c;
 }

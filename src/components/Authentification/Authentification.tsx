@@ -1,12 +1,15 @@
 import { useState } from 'react';
-import './Authentification.css';
+import './testAuthentification.css';
 import axios from 'axios';
+import Navbar from "../Navbar/Navbar"
+import { useNavigate } from 'react-router-dom';
 
 function Authentification() {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLoginClick = () => {
     setIsLogin(true);
@@ -32,8 +35,11 @@ function Authentification() {
           username,
           password
         });
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.access_token);
         alert('Login successful');
+        setTimeout(() => {
+          navigate("/Account");
+        }, 3000);
       } catch (error) {
         console.error(error);
         alert('Login failed');
@@ -48,7 +54,12 @@ function Authentification() {
           username,
           password
         });
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('userId', response.data.userId);
         alert('Signup successful');
+        setTimeout(() => {
+          navigate("/Account");
+        }, 3000);
       } catch (error) {
         console.error(error);
         alert('Signup failed');
@@ -58,10 +69,12 @@ function Authentification() {
 
   return (
     <>
-      <div className='logo'>
+    <Navbar />
+    <div className="mainAuthPage">
+      <div className='logoLogin'>
         <img src='/logo.png' alt='logo' />
       </div>
-      <section className="main">
+      <section className='form'>
         <div className="form_wrapper">
           <input type="radio" className="radio" name="radio" id="login" defaultChecked />
           <input type="radio" className="radio" name="radio" id="signup" />
@@ -87,7 +100,7 @@ function Authentification() {
                 <input type="password" className="input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
 
-              <a href="#forgot" className="forgot">Forgot password?</a>
+              <a href="/Forgot" className="forgot">Forgot password?</a>
 
               <input type="submit" className="btn" value="Login" />
 
@@ -115,6 +128,7 @@ function Authentification() {
           </form>
         </div>
       </section>
+      </div>
     </>
   );
 }

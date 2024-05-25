@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+body {
+  font-size: 14px;
+  color: #222;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  background: #eed5e4;
+  background: radial-gradient(circle, #eed5e4 63%, #f39b8e 100%);
+  background-size: 100vw 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 340px;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+
+.mainPricingPage {
+  width: 80vw;
+  border-radius: 3px;
+  padding: 30px;
+}
+
+.mainPricingPage .form_wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainPricingPage .form_wrapper .tile {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mainPricingPage .form_wrapper .tile h3 {
+  font-size: 22px;
+  margin: 0px;
+  transition: all 0.3s ease;
+  font-family: 'Le Murmure';
+}
+
+.mainPricingPage .form_wrapper .radio {
+  display: none;
+}
+
+.mainPricingPage .form_wrapper .tab {
+  width: 50%;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  user-select: none;
+  border: solid 1px #CCC;
+}
+
+.mainPricingPage .form_wrapper .tab.firstTable_tab {
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.mainPricingPage .form_wrapper .tab.secondTable_tab {
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.mainPricingPage .form_wrapper .shape {
+  background: #f39b8e;
+  background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+  width: 50%;
+  height: calc(40px - 1px);
+  border-radius: 5px;
+  position: absolute;
+  top: 55.5px;
+  left: 0px;
+  opacity: 0.9;
+  transition: all 0.4s ease;
+}
+
+.mainPricingPage .form_wrapper .shape:hover {
+  background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+}
+
+.mainPricingPage .form_wrapper #firstTable:checked~.shape {
+  left: 0px;
+}
+
+.mainPricingPage .form_wrapper #firstTable:checked~.firstTable_tab {
+  border-color: transparent;
+  z-index: 1;
+  color: white;
+}
+
+.mainPricingPage .form_wrapper #firstTable:checked~.tile .secondTable {
+  display: none;
+}
+
+.mainPricingPage .form_wrapper #firstTable:checked~.form_wrap {
+  transform: translateX(0);
+}
+
+.mainPricingPage .form_wrapper #firstTable:checked~.form_wrap .secondTable_form {
+  opacity: 0;
+}
+
+.mainPricingPage .form_wrapper #secondTable:checked~.shape {
+  left: 50%;
+}
+
+.mainPricingPage .form_wrapper #secondTable:checked~.secondTable_tab {
+  border-color: transparent;
+  z-index: 1;
+  color: white;
+}
+
+.mainPricingPage .form_wrapper #secondTable:checked~.tile .firstTable {
+  display: none;
+}
+
+.mainPricingPage .form_wrapper #secondTable:checked~.form_wrap {
+  transform: translateX(-100%);
+}
+
+.mainPricingPage .form_wrapper #secondTable:checked~.form_wrap .firstTable_form {
+  opacity: 0;
+}
+
+.mainPricingPage .form_wrapper .form_wrap {
+  display: flex;
+  width: 100%;
+  flex: 0 0 100%;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild {
+  width: 100%;
+  flex: 0 0 100%;
+  transition: all 0.5s ease;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .input_group {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .input_group .input {
+  border: solid #f1f1f1 2px;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s linear;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .input_group .input::placeholder {
+  color: #adadad;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .input_group .input:hover {
+  border-color: rgba(248, 66, 151, 0.3);
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .input_group .input:focus {
+  border-color: rgba(248, 66, 151, 0.3);
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .forgot {
+  display: block;
+  margin-bottom: 15px;
+  padding: 0px 2px;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .btn {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: white;
+  background: linear-gradient(90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .btn:hover {
+  background: linear-gradient(-90deg, #f39b8e 63%, #eed5e4 100%) no-repeat center;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .btn:active {
+  transform: scale(0.95);
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .not_mem {
+  text-align: center;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .not_mem label span {
+  pointer-events: all;
+  color: #EA5923;
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
+
+.mainPricingPage .form_wrapper .form_wrap .form_fild .not_mem label span:hover {
+  color: #a03f1c;
+}
