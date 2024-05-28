@@ -1,18 +1,12 @@
-/* Styles de base pour le body */
-body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-}
-
 /* Styles pour le footer */
 .footer {
     background-color: #EA5923;
     align-items: center;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100vw;
+    z-index: 3;
+    height: 6vh;
 }
 
 .footer-container {
@@ -34,7 +28,7 @@ body {
 }
 
 .footer-section h4 {
-    margin-bottom: 1px;
+    margin-bottom: 0;
     font-size: 15px;
     margin-top: 0;
 }

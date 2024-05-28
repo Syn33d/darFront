@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './MyAccount.css';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import Navbar from '../Navbar/Navbar';
 
 
 const Account = () => {
@@ -23,7 +24,7 @@ const Account = () => {
     const [isEditingPassword, setIsEditingPassword] = useState(false);
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, ] = useState(false);
 
 
     // Vérifiez si le token est présent dans le localStorage
@@ -67,18 +68,18 @@ const Account = () => {
         }
     }, [userId, navigate]);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
     };
 
-    const handleNewPasswordChange = (e) => {
+    const handleNewPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewPassword(e.target.value);
     };
 
-    const handleConfirmPasswordChange = (e) => {
+    const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setConfirmPassword(e.target.value);
     };
 
@@ -86,11 +87,7 @@ const Account = () => {
         setIsEditingPassword(true);
     };
 
-    const handleShowPasswordClick = () => {
-        setShowPassword(!showPassword);
-    };
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = async () => {
         try {
             await axios.patch(`http://localhost:3000/user/${userId}`, formData, {
                 headers: {
@@ -122,54 +119,57 @@ const Account = () => {
     //   }
 
     return (
-        <div className="account-container">
-            <h1 className="account-title">Mon Compte</h1>
-            <div className="account-details">
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Nom:</label>
-                        <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Prénom:</label>
-                        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Email:</label>
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Mot de passe:</label>
-                        {isEditingPassword ? (
-                            <>
-                                <input type={showPassword ? "text" : "password"} name="newPassword" value={newPassword} onChange={handleNewPasswordChange} placeholder="Nouveau mot de passe" />
-                                <input type={showPassword ? "text" : "password"} name="confirmPassword" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder="Confirmer le nouveau mot de passe" />
-                            </>
-                        ) : (
-                            <button onClick={handleEditPasswordClick}>Modifier le mot de passe</button>
-                        )}
-                    </div>
-                    <div>
-                        <label>Rue:</label>
-                        <input type="text" name="street" value={formData.street} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Ville:</label>
-                        <input type="text" name="city" value={formData.town} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Code postal:</label>
-                        <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Type de plan d'abonnement:</label>
-                        <input type="text" name="subscriptionPlan" value={formData.subscriptionPlan} onChange={handleChange} readOnly />
-                    </div>
-                    <button type="submit">Mettre à jour</button>
-                </form>
-                <button onClick={() => window.location.href = "https://billing.stripe.com/p/login/test_7sI5lo1SO9pydWg9AA"}> Accéder au portail client Stripe</button>
+        <>
+            <Navbar />
+            <div className="account-container">
+                <h1 className="account-title">Mon Compte</h1>
+                <div className="account-details">
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label>Nom:</label>
+                            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Prénom:</label>
+                            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Email:</label>
+                            <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Mot de passe:</label>
+                            {isEditingPassword ? (
+                                <>
+                                    <input type={showPassword ? "text" : "password"} name="newPassword" value={newPassword} onChange={handleNewPasswordChange} placeholder="Nouveau mot de passe" />
+                                    <input type={showPassword ? "text" : "password"} name="confirmPassword" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder="Confirmer le nouveau mot de passe" />
+                                </>
+                            ) : (
+                                <button onClick={handleEditPasswordClick}>Modifier le mot de passe</button>
+                            )}
+                        </div>
+                        <div>
+                            <label>Rue:</label>
+                            <input type="text" name="street" value={formData.street} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Ville:</label>
+                            <input type="text" name="city" value={formData.town} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Code postal:</label>
+                            <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label>Type de plan d'abonnement:</label>
+                            <input type="text" name="subscriptionPlan" value={formData.subscriptionPlan} onChange={handleChange} readOnly />
+                        </div>
+                        <button type="submit">Mettre à jour</button>
+                    </form>
+                    <button onClick={() => window.location.href = "https://billing.stripe.com/p/login/test_7sI5lo1SO9pydWg9AA"}> Accéder au portail client Stripe</button>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

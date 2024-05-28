@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+
+@font-face {
+    font-family: 'Le Murmure';
+    src: url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff2') format('woff2'),
+        url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mainHomePage {
+    width: 94vw;
+    position: initial;
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+
+.gif {
+    display: flex;
+}
+
+.gif-section img {
+    width: 47vw;
+}
+
+.content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 47vw;
+}
+
+.content-section p {
+    color: #000;
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.content-section strong {
+    color: #000;
+    font-family: 'Satoshi-Bold';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+}
+
+.button-container button {
+    width: 12.5vw;
+    color: black;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0.75px solid var(--Noir, #000);
+    background: rgba(255, 255, 255, 0.00);
+}
+
+.button-container button:hover {
+    border: 0.75px solid #EA5923;
+    color: #EA5923;
+}
+
+.articles-container {
+    width: 94vw;
+}
+
+.articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 35vh;
+}
+
+.articles-title {
+    color: #000;
+    font-family: "Le Murmure";
+    font-size: 100px;
+    font-weight: 600;
+    letter-spacing: -3px;
+}
+
+
+.articles-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #000;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0.75px solid var(--Noir, #000);
+}
+
+.articles-button:hover {
+    border: 0.75px solid #EA5923;
+    color: #EA5923;
+}
+
+.articles-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.article-card {
+    max-width: 20vw;
+}
+
+.article-image {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.article-content {
+    text-align: left;
+}
+
+.article-theme {
+    color: #000;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 10px;
+    /* Pour ajouter un espace entre l'image et le texte THÈME */
+}
+
+.article-title {
+    font-family: 'Le Murmure', sans-serif;
+    font-size: 18px;
+    margin-top: -3vh;
+    margin-bottom: 3vh;
+}
+
+.article-description {
+    font-size: 14px;
+}
+
+.article-footer {
+    font-size: 12px;
+    color: #666;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    /* Add this */
+    flex-direction: row;
+    /* Add this */
+    justify-content: space-between;
+    /* Add this */
+}
+
+.content .button-block {
+    width: 12.5vw;
+    /* Change the padding to increase the size of the button */
+    height: 7.5vh;
+    border-radius: 500px;
+    transition: background-color 0.3s ease;
+    border: 0.75px solid var(--Noir, #000);
+    background: rgba(255, 255, 255, 0.00);
+    position: relative;
+    /* Add this */
+    bottom: -30px;
+    /* Add this */
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40vw;
+    text-align: justify;
+    flex-grow: 1;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.sections {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    width: 94vw;
+}
+
+.section {
+    flex: 1;
+    padding: 60px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
+    background-color: white;
+    text-transform: uppercase;
+    font-family: 'Le Murmure';
+    font-style: normal;
+    font-weight: 600;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18vw;
+    color: #000;
+    text-align: center;
+    font-size: 45px;
+    line-height: normal;
+}
+
+.section-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 22vw;
+}
+
+.section-event h2 {
+    color: #000;
+    text-align: center;
+    font-family: "Le Murmure";
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.95px;
+}
+
+.section-event p {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: -10vh;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.small-logo {
+    width: 5vw;
+    height: 10vh;
+    margin: 0 10px;
+}
+
+.event-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0.75px solid var(--Noir, #000);
+}
+
+.event-button:hover {
+    border: 0.75px solid #EA5923;
+    color: #EA5923;
+}
+
+.section:first-child {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.section:not(:first-child) {
+    border-right: 2px solid black;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.section:hover {
+    background-color: transparent;
+}
+
+.section:hover::before {
+    opacity: 1;
+}
+
+.section[data-bg="photo"]::before {
+    background-image: url('logo.png');
+}
+
+.section[data-bg="musique"]::before {
+    background-image: url('logo.png');
+}
+
+.section[data-bg="peinture"]::before {
+    background-image: url('logo.png');
+}
+
+.section[data-bg="createurs"]::before {
+    background-image: url('logo.png');
+}
+
+.latest-edition-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 94vw;
+    height: 60vh;
+}
+
+.latest-edition-left {
+    display: flex;
+    flex-direction: column;
+    width: 47vw;
+}
+
+.latest-edition-title {
+    color: #000;
+    font-family: "Le Murmure";
+    font-size: 6vh;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.latest-edition-text {
+    color: #000;
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 1vh;
+}
+
+.latest-edition-button {
+    display: inline-block;
+    font-size: 14px;
+    color: #000;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0.75px solid var(--Noir, #000);
+    width: 12.5vw;
+}
+
+.latest-edition-button:hover {
+    border: 0.75px solid #EA5923;
+    color: #EA5923;
+}
+
+.latest-edition-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.latest-edition-images {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.main-image {
+    width: 20vw;
+    height: 30vh;
+    margin-bottom: 10px;
+}
+
+.secondary-image {
+    width: 10vw;
+    height: 20vh;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    transform: rotate(-15deg);
+}
+
+.latest-edition-price {
+    font-size: 14px;
+    margin-top: 2vh;
+    color: #000;
+    text-align: right;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

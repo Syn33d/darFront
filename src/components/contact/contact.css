@@ -1,21 +1,12 @@
-body {
-  height: 100vh;
-
-  background-color: #F9F6EF;
-}
-
 .contact-form-container {
   width: 78vw;
-  height: 50vh;
+  display: grid;
+  margin: auto;
+  min-height: 60vh;
 }
 
 h1 {
   font-family: 'Le Murmure';
-}
-
-p {
-  margin-top: -3vh;
-  margin-bottom: 5vh;
 }
 
 label {
@@ -26,6 +17,7 @@ label {
 .contact-form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3vh;
 }
 
 .name-fields {

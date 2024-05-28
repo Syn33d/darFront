@@ -1,72 +1,65 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    width: 100vw;
-  }
-  
-  .account-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80vw;
-    margin: auto;
-    margin-top: 50px;
-  }
-  
-  .account-title {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: 600;
-  }
-  
-  .account-details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .account-details p {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-  
-  .account-details input[type="text"],
-  .account-details input[type="email"],
-  .account-details input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  .account-details button {
-    padding: 15px 25px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 30px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .account-details button:hover {
-    background-color: #0056b3;
-  }
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80vw;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.account-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-details p {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.account-details input[type="text"],
+.account-details input[type="email"],
+.account-details input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.account-details button {
+  padding: 15px 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.account-details button:hover {
+  background-color: #0056b3;
+}

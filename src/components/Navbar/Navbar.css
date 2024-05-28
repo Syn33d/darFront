@@ -1,15 +1,15 @@
 /* Styles de base pour la navbar */
 .navbar {
-  background-color: #F9F6EF;
+  background-color: #fff;
   color: #333;
   padding: 0 3rem;
-  align-items: center;
   font-size: 1em;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
   height: 24vh;
+  z-index: 3;
 }
 
 .navbar::after {
@@ -19,10 +19,6 @@
   bottom: 0;
   width: 94vw; /* Largeur de la bordure */
   border-bottom: 1px solid #000; /* Style de la bordure */
-}
-
-body {
-  width: 100vw;
 }
 
 .navbar.active {

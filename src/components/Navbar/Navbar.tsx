@@ -6,6 +6,18 @@ const Navbar = () => {
 
     const [isMediumOrSmaller, setIsMediumOrSmaller] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isConnected, setIsConnected] = useState(!!localStorage.getItem('token'));
+
+    const handleLogout = () => {
+        // Supprimer le token du localStorage
+        localStorage.removeItem('token');
+    
+        // Mettre à jour l'état isConnected
+        setIsConnected(false);
+    
+        // Rediriger l'utilisateur vers la page de connexion
+        window.location.href = '/Authentification';
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -47,7 +59,7 @@ const Navbar = () => {
                         <div className="nav-group">
                             <ul className="nav-menu">
                                 <li className="nav-menu__item">
-                                    <a href="#" className="nav-menu__link">
+                                    <a href="/Magazine" className="nav-menu__link">
                                         <span className="text">Magazine</span>
                                     </a>
                                 </li>
@@ -59,21 +71,44 @@ const Navbar = () => {
                                 </li>
 
                                 <li className="nav-menu__item">
-                                    <a href="#" className="nav-menu__link">
+                                    <a href="/Pricing" className="nav-menu__link">
                                         <span className="text">Abonnements</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-menu__item">
-                                    <a href="#" className="nav-menu__link">
+                                    <a href="/Contact" className="nav-menu__link">
                                         <span className="text">Contact</span>
                                     </a>
                                 </li>
                             </ul>
 
-                            <a href="#" className="nav-menu__account">
-                                <span className="text">Mon Compte</span>
-                            </a>
+                            {isConnected ? (
+                                <ul className="nav-menu">
+                                    <li>
+                                        <a href="/Account" className="nav-menu__link">
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAj0lEQVR4nNXQQQ7BUBSF4W/UGelc7YgQa5K29oMZXUYtQC0ACzC5Ztr0xYQ/uZP7cv578vhVMuxwQ4c6dqOpsccMBQ6oUgRdBN/MY/eV4JoiqKJ2EeEjyhRBFpIuLpepn7hEg2fMGYux4RItVpjErHHBdszlFvmHtzwkg02auNzHBqchwSMq9zHFfUjwh7wAHuEdJZUq+i0AAAAASUVORK5CYII=" />
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/Account" className="nav-menu__link" onClick={(e) => {
+                                            e.preventDefault();
+                                            const confirmLogout = window.confirm("Voulez-vous vraiment vous déconnecter ?");
+                                            if (confirmLogout) {
+                                                // Appeler la fonction pour déconnecter l'utilisateur et supprimer le token
+                                                handleLogout();
+                                            }
+                                        }}>
+                                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkklEQVR4nM3SMQ4BYRDF8R8Jij2AXq3CabgHjXIlGqVK4gRCwzW4iC002tUo9/smoeAlr5rknzczj3/SDBXqhG8Y5AAVRolZCyW2OUAdJCyiBHUAmGCP7qeADo64oJcD9DHHosFLPHCIACXWDd7gGQFyK5xwjlZIaYjdN0csojfeMU7M2lhFRZq+IakqX6MEv9ELzC0sGDfwfb0AAAAASUVORK5CYII=" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            ) : (
+                                <a href="/Authentification" className="nav-menu__link">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAj0lEQVR4nNXQQQ7BUBSF4W/UGelc7YgQa5K29oMZXUYtQC0ACzC5Ztr0xYQ/uZP7cv578vhVMuxwQ4c6dqOpsccMBQ6oUgRdBN/MY/eV4JoiqKJ2EeEjyhRBFpIuLpepn7hEg2fMGYux4RItVpjErHHBdszlFvmHtzwkg02auNzHBqchwSMq9zHFfUjwh7wAHuEdJZUq+i0AAAAASUVORK5CYII=" />
+                                </a>
+                            )}
                         </div>
                     </div>
                 </nav>

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './testAuthentification.css';
 import axios from 'axios';
-import Navbar from "../Navbar/Navbar"
 import { useNavigate } from 'react-router-dom';
+
+import { Helmet } from 'react-helmet';
 
 function Authentification() {
   const [isLogin, setIsLogin] = useState(true);
@@ -69,11 +70,10 @@ function Authentification() {
 
   return (
     <>
-    <Navbar />
+    <Helmet>
+      <body className="test-authentification-page" />
+    </Helmet> 
     <div className="mainAuthPage">
-      <div className='logoLogin'>
-        <img src='/logo.png' alt='logo' />
-      </div>
       <section className='form'>
         <div className="form_wrapper">
           <input type="radio" className="radio" name="radio" id="login" defaultChecked />

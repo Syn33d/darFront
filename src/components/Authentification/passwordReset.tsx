@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './PasswordReset.css';
 import axios from 'axios';
-import Navbar from "../Navbar/Navbar";
+import { Helmet } from 'react-helmet';
 
 function PasswordReset() {
   const [step, setStep] = useState('email'); // 'email' or 'reset'
   const [email, setEmail] = useState('');
-  const [token, setToken] = useState('');
+  const [, setToken] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -36,7 +36,7 @@ function PasswordReset() {
         return;
       }
 
-      const response = await axios.post('http://localhost:3000/auth/reset-password/confirm', { password, email, token });
+      await axios.post('http://localhost:3000/auth/reset-password/confirm', { password, email, token });
       alert('Password reset successful');
     } catch (error) {
       console.error(error);
@@ -46,11 +46,10 @@ function PasswordReset() {
 
   return (
     <>
-      <Navbar />
+    <Helmet>
+        <body className="test-password-reset" />
+    </Helmet>
       <div className='mainPasswordReset'>
-        <div className='logoLogin'>
-          <img src='/logo.png' alt='logo' />
-        </div>
         <section className="formReset">
           <div className="formReset_wrapper">
             {step === 'email' ? (
