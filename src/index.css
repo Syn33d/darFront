@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'Le Murmure';
-  src: url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff2') format('woff2'),
-      url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff') format('woff');
+  src: url('../src/assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff2') format('woff2'),
+      url('../src/assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
