@@ -7,7 +7,7 @@ import SinglePayment from "./components/Payment/SinglePayment.tsx";
 import Account from "./components/Account/MyAccount.tsx";
 import Homepage from "./components/HomePage/HomePage.tsx";
 import Magazine from "./components/Magazine/Magazine.tsx";
-import Contact from "./components/toto/Contact.tsx";
+import Contact from "./components/Contact/Contact.tsx";
 
 function App() {
 
