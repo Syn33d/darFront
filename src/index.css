@@ -1,4 +1,6 @@
 @import url('../src/assets/fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css');
+@import url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff2');
+@import url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff');
 
 *{
     font-family: 'Satoshi-Light';
