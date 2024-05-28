@@ -1,6 +1,6 @@
 import './Magazine.css';
 import Navbar from '../Navbar/Navbar';
-import Footer from '../toto/Footer';
+import Footer from '../Footer/Footer';
 
 const Magazine = () => {
     return (

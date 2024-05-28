@@ -1,5 +1,5 @@
 import "./Contact.css";
-import Footer from "../toto/Footer.tsx";
+import Footer from "../Footer/Footer.tsx";
 import Navbar from "../Navbar/Navbar.tsx";
 
 function Contact() {
