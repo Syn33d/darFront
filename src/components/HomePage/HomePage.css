@@ -7,7 +7,6 @@
         url('../assets/fonts/murmure-main/fonts/webfonts/LeMurmure-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: fallback;
 }
 
 .mainHomePage {
