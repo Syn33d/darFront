@@ -312,19 +312,19 @@
 }
 
 .section[data-bg="photo"]::before {
-    background-image: url('logo.png');
+    background-image: url('../../../public/logo.png');
 }
 
 .section[data-bg="musique"]::before {
-    background-image: url('logo.png');
+    background-image: url('../../../public/logo.png');
 }
 
 .section[data-bg="peinture"]::before {
-    background-image: url('logo.png');
+    background-image: url('../../../public/logo.png');
 }
 
 .section[data-bg="createurs"]::before {
-    background-image: url('logo.png');
+    background-image: url('../../../public/logo.png');
 }
 
 .latest-edition-container {
