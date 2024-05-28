@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Contact from "./components/Contact/Contact.tsx";
 import Authentification from "./components/Authentification/Authentification.tsx";
 import PasswordReset from "./components/Authentification/passwordReset.tsx";
 import PricingPage from "./components/Payment/PricingPage.tsx";
@@ -8,6 +7,7 @@ import SinglePayment from "./components/Payment/SinglePayment.tsx";
 import Account from "./components/Account/MyAccount.tsx";
 import Homepage from "./components/HomePage/HomePage.tsx";
 import Magazine from "./components/Magazine/Magazine.tsx";
+import Contact from "./components/Contact/Contact.tsx";
 
 function App() {
 
