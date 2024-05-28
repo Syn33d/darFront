@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Authentification from "./components/Authentification/Authentification.tsx";
-import PasswordReset from "./components/Authentification/test.tsx";
+import PasswordReset from "./components/Authentification/PasswordReset.tsx";
 import PricingPage from "./components/Payment/PricingPage.tsx";
 import SinglePayment from "./components/Payment/SinglePayment.tsx";
 import Account from "./components/Account/MyAccount.tsx";
