@@ -138,84 +138,202 @@
   color: #000000;
 }
 
+/* Styles de base pour la navbar */
+.navbar {
+  background-color: #fff;
+  color: #333;
+  padding: 0 3rem;
+  font-size: 1em;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 24vh;
+  z-index: 3;
+  color: #000;
+  font-size: 1.5vh;
+  line-height: normal;
+  margin-top: 2vh;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 3rem;
+  /* Centrer la bordure */
+  bottom: 0;
+  width: 94vw;
+  /* Largeur de la bordure */
+  border-bottom: 1px solid #000;
+  /* Style de la bordure */
+}
+
+.navbar.active {
+  background-color: #555;
+}
+
+/* Wrapper pour le contenu de la navbar */
+.wrapper {
+  align-items: center;
+}
+
+/* Disposition de la partie supérieure de la navbar */
+.top__wrapper {
+  display: flex;
+  align-items: baseline;
+  width: 94vw;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  margin-left: -1.5vw;
+  margin-top: -1rem;
+}
+
+/* Styles pour le logo */
+.logo img {
+  /* Ajustez la largeur du logo */
+  height: auto;
+  width: 20%;
+}
+
+/* Styles pour le groupe de navigation et réseaux sociaux */
+.nav-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94vw;
+  margin-top: 1rem;
+  font-size: 1.5em;
+}
+
+/* Styles pour le menu de navigation */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu__item {
+  position: relative;
+}
+
+.nav-menu__link {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.textNavBar {
+  color: black; /* Ensures the default color is used */
+}
+
+.textNavBar:hover {
+  font-family: "Satoshi-LightItalic";
+}
+
+.nav-menu__account {
+  color: #000;
+  margin-left: auto;
+}
+
+.material-symbols-outlined {
+  margin-right: 0.5rem;
+}
+
+/* Styles pour les icônes sociales */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: large;
+}
+
+.social-icon {
+  color: gray;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: currentColor;
+}
+
+.social-icon .fa-pinterest:hover {
+  color: #E60023;
+}
+
+.social-icon .fa-instagram:hover {
+  color: #C13584;
+}
+
+.social-icon .fa-tiktok:hover {
+  color: #000000;
+}
+
+.social-icon .fa-times:hover {
+  color: #000000;
+}
+
 @media (max-width: 920px) {
-
-  /* Masquer la navbar normale */
-  .navbar .wrapper {
-    display: none;
-  }
-
-  .wrapper {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+    background-color: #fff;
+    z-index: 1500;
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
 
-  .top__wrapper {
+  .navbar.active {
+    transform: translateY(0);
+  }
+
+  .wrapper, .top__wrapper, .nav-group, .nav-menu {
     flex-direction: column;
     align-items: center;
+    width: auto;
   }
 
   .logo {
     display: flex;
     justify-content: center;
-    /* Centre horizontalement */
     align-items: center;
-    /* Centre verticalement */
     width: auto;
     height: auto;
-    position: fixed;
-    top: 35px;
-    right: 0;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .nav-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    margin: 1rem 0;
   }
 
   .nav-menu {
-    flex-direction: column;
-    align-items: center;
     gap: 1rem;
-    position: fixed;
-    top: 85px;
-    right: 0;
-    ;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .nav-menu__item {
-    margin-right: 0;
+    margin: 2rem 0; /* Spacing around nav menu */
   }
 
   .social-icons {
-    margin-left: 0;
-  }
-
-  .menu-toggle,
-  .menu-toggle:focus,
-  .menu-toggle:active,
-  .menu-toggle:hover,
-  .menu-toggle:visited {
-    outline: none;
-  }
-
-  /* Afficher le bouton de menu burger */
-  .menu-toggle {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 40px;
-    height: 40px;
+    justify-content: center;
+    gap: 1rem;
+    font-size: large;
+    margin-top: 2rem; /* Adjust to position below nav items */
+  }
+
+  .menu-toggle {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 1500;
-    background-color: transparent;
+    z-index: 1600;
+    background: transparent;
     border: none;
     cursor: pointer;
   }
@@ -224,159 +342,203 @@
     width: 25px;
     height: 3px;
     background-color: #000;
-    margin: 2px 0;
+    margin: 5px 0;
     transition: all 0.3s linear;
+  }
+
+  .menu {
+    position: fixed;
+    width: 200px;    
+    right: 0;
+    z-index: 1000;
+  }
+  
+  #hamburger {
+    display: none;
+  }
+  
+  #hamburger-logo {
+    cursor: pointer;
+    width: 200px;
+    display: block;
+    color: black;
+    background: transparent;
+    text-align: right;
+    transform: translateX(0);
+    padding: 10px;
+    font-size: 5vh;
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: white;
+    width: 200px;
+    transform: translateX(100%);
+    transition: 0.7s;
+  }
+  
+  #hamburger:checked ~ #hamburger-logo,
+  #hamburger:checked ~ nav {
+    transform: translate(0);
+    background-color: #000;
+    color: white;
+  }
+
+  #hamburger:not(:checked) ~ nav {
+    display: none;
+  }
+  
+  #hamburger:checked ~ nav {
+    display: flex;
+  }
+  
+  nav a {
+    background: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav a:hover {
+    background: #444;
   }
 }
 
-/* Styles pour les écrans de taille moyenne (tablette) */
 @media (max-width: 768px) {
-
-  /* Masquer la navbar normale */
-  .navbar .wrapper {
-    display: none;
-  }
-
-  .wrapper {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+    background-color: #fff;
+    z-index: 1500;
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
 
-  .top__wrapper {
+  .navbar.active {
+    transform: translateY(0);
+  }
+
+  .wrapper, .top__wrapper, .nav-group, .nav-menu {
     flex-direction: column;
     align-items: center;
+    width: auto;
   }
 
   .logo {
     display: flex;
     justify-content: center;
-    /* Centre horizontalement */
     align-items: center;
-    /* Centre verticalement */
     width: auto;
     height: auto;
-    position: fixed;
-    top: 25px;
-    right: 0;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .nav-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    margin: 1rem 0;
   }
 
   .nav-menu {
-    flex-direction: column;
-    align-items: center;
     gap: 1rem;
-    top: 65px;
-  }
-
-  .nav-menu__item {
-    margin-right: 0;
+    margin: 2rem 0; /* Spacing around nav menu */
   }
 
   .social-icons {
-    margin-left: 0;
-    margin-top: -70%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: large;
+    margin-top: 2rem; /* Adjust to position below nav items */
   }
 
-  /* Afficher le bouton de menu burger */
   .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1600;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 10;
   }
 
   .menu-toggle .burger {
     width: 2rem;
     height: 0.25rem;
-    background: #333;
+    background-color: #333;
+    margin: 5px 0;
     transition: all 0.3s linear;
-    position: relative;
     transform-origin: 1px;
-  }
-
-  .menu-toggle.open {
-    height: auto;
-    /* Ajuster la hauteur automatiquement */
   }
 }
 
-/* Styles pour les petits écrans (mobile) */
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+    background-color: #fff;
+    z-index: 1500;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+
+  .navbar.active {
+    transform: translateY(0);
+  }
+
+  .wrapper, .top__wrapper, .nav-group, .nav-menu {
+    flex-direction: column;
+    align-items: center;
     width: auto;
-  }
-
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .top__wrapper {
-    flex-direction: column;
-    align-items: center;
   }
 
   .logo {
     display: flex;
     justify-content: center;
-    /* Centre horizontalement */
     align-items: center;
-    /* Centre verticalement */
     width: auto;
     height: auto;
-  }
-
-  .nav-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    margin: 1rem 0;
   }
 
   .nav-menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin: 2rem 0; /* Spacing around nav menu */
   }
 
-  .nav-menu__item {
-    margin-right: 0;
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: large;
+    margin-top: 2rem; /* Adjust to position below nav items */
   }
 
   .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 40px;
-    height: 30px;
     position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 1500;
-    background-color: transparent;
+    z-index: 1600;
+    background: transparent;
     border: none;
     cursor: pointer;
-    outline: none;
   }
 
-  /* Styles pour le menu burger */
   .menu-toggle .burger {
     width: 100%;
     height: 4px;
     background-color: #000;
+    margin: 5px 0;
   }
 }

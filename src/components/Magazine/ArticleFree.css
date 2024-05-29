@@ -120,3 +120,27 @@
     font-size: 1em;
     color: #555;
 }
+
+@media (max-width: 900px) {
+    .side-images {
+        margin: 5vw;
+    }
+
+    .side-images, .text-section {
+        width: 30%;
+    }
+
+    .left-image1, .left-image2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .text-section p {
+        font-size: 1em;
+    }
+
+    .thumbnail {
+        width: 18vw;
+        height: 15vh;
+    }
+}

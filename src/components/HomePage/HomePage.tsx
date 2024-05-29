@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 const Homepage = () => {
   const articles = [
     { theme: 'THÈME', title: 'Nom de l\'article', color: '#EED5E4' },
@@ -85,7 +86,7 @@ const Homepage = () => {
                 <div className="magazine-article-image" style={{ backgroundColor: article.color }}></div>
                 <div className="article-content">
                   <p className="article-theme">{article.theme}</p>
-                  <h2 className="article-title">{article.title}</h2>
+                  <h2 className="homepage-article-title-row">{article.title}</h2>
                   <p className="article-description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Ut elit tellus</strong>, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>

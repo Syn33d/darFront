@@ -248,3 +248,36 @@
 .form .form_wrapper .form_wrap .form_fild .not_mem label span:hover {
     color: #a03f1c;
 }
+
+@media (max-width: 900px) {
+    .form {
+        width: 50vw;
+    }
+
+    .form .form_wrapper .tile h3 {
+        font-size: 20px;
+    }
+
+    .form .form_wrapper .tab {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form {
+        width: 80vw;
+        padding: 20px;
+    }
+
+    .form .form_wrapper .tile h3 {
+        font-size: 18px;
+    }
+
+    .form .form_wrapper .tab {
+        font-size: 14px;
+    }
+
+    .form .form_wrapper .tile {
+        margin-bottom: 25px;
+    }
+}

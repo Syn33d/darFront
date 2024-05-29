@@ -150,6 +150,16 @@
     letter-spacing: -3px;
 }
 
+.homepage-article-title-row {
+    color: #000;
+    font-family: "Le Murmure";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.9px;
+}
+
 .article-description {
     font-size: 14px;
 }
@@ -315,19 +325,19 @@
 }
 
 .section[data-bg="photo"]::before {
-    background-image: url('../../../public/logo.png');
+    background-image: url('logo.png');
 }
 
 .section[data-bg="musique"]::before {
-    background-image: url('../../../public/logo.png');
+    background-image: url('logo.png');
 }
 
 .section[data-bg="peinture"]::before {
-    background-image: url('../../../public/logo.png');
+    background-image: url('logo.png');
 }
 
 .section[data-bg="createurs"]::before {
-    background-image: url('../../../public/logo.png');
+    background-image: url('logo.png');
 }
 
 .latest-edition-container {
@@ -440,3 +450,135 @@
         opacity: 1;
     }
 }
+
+/* CSS pour les écrans de taille moyenne et grande */
+.gif {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .gif-section,
+  .content-section {
+    width: 50%;
+  }
+  
+  .button-block {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px; /* Ajoutez une marge autour des boutons */
+    width: auto; /* Permet aux boutons de s'adapter à leur contenu */
+  }
+  
+  /* CSS pour les petits écrans */
+  @media (max-width: 768px) {
+    .gif {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gif-section,
+    .content-section {
+      width: 100%;
+    }
+  
+    .button-block {
+        padding: 20px 40px;
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .button-container {
+        width: 100%;
+    }
+    
+    .button-container button {
+        width: 100%;
+    }
+
+    .articles-header {
+        height: 15vh;
+    }
+
+    .sections {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .section[data-bg="photo"]::before {
+        display: none;
+    }
+    
+    .section[data-bg="musique"]::before {
+        display: none;
+    }
+    
+    .section[data-bg="peinture"]::before {
+        display: none;
+    }
+    
+    .section[data-bg="createurs"]::before {
+        display: none;
+    }
+
+    .section:first-child {
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .section:not(:first-child) {
+        border-bottom: 2px solid black;
+        border-right: none;
+    }
+    
+    .section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .section-event {
+        width: 100%;
+    }
+
+    .section-event h2 {
+        margin-top: 5vh;
+        margin-bottom: 15vh;
+    }
+
+    .latest-edition-title {
+        margin-top: 0;
+    }
+
+    .latest-edition-button {
+        width: 50%;
+    }
+
+    .main-image {
+        width: 30vw;
+        height: 30vh;
+    }
+
+    .secondary-image {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    .latest-edition-price {
+        text-align: center;
+    } 
+  }
