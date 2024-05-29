@@ -23,11 +23,10 @@
     margin-bottom: 5vh;
 }
 
-
 .contentMagazine {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .side-images {
@@ -35,9 +34,18 @@
     margin-bottom: 15vh;
 }
 
-.side-images img {
-    width: 80%;
-    height: 40vh;
+
+.left-image1 {
+    width: 30vw;
+    height: 80vh;
+    margin-right: 5vw;
+}
+
+.left-image2 {
+    width: 30vw;
+    height: 50vh;
+    margin-right: 5vw;
+    margin-top: 5vh;
 }
 
 .text-section {
@@ -91,8 +99,8 @@
 }
 
 .thumbnail {
-    width: 10vw;
-    height: 10vh;
+    width: 8vw;
+    height: 18vh;
     margin-right: 20px;
     border-radius: 8px;
 }

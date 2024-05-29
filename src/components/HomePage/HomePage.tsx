@@ -75,7 +75,7 @@ const Homepage = () => {
         <div className="articles-container">
 
           <div className="articles-header">
-            <h2 className="articles-title">Les articles</h2>
+            <h2 className="homepage-article-title">Les articles</h2>
             <button className="articles-button">Découvrir tous les articles</button>
           </div>
 

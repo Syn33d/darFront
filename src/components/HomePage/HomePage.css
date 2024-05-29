@@ -140,17 +140,14 @@
     /* Pour ajouter un espace entre l'image et le texte THÈME */
 }
 
-.article-title {
-    font-family: 'Le Murmure', sans-serif;
-    font-size: 18px;
-    margin-top: -2vh;
-    margin-bottom: 2vh;
+.homepage-article-title {
+    font-family: 'Le Murmure';
     color: #000;
-    font-size: 2vw;
+    font-size: 7vw;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: -0.9px;
+    letter-spacing: -3px;
 }
 
 .article-description {
@@ -344,16 +341,23 @@
 .latest-edition-left {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 47vw;
 }
 
 .latest-edition-title {
     color: #000;
     font-family: "Le Murmure";
-    font-size: 6vh;
+    font-size: 7vw;
     font-weight: 600;
     letter-spacing: -1px;
+    margin-top: -2vh;
+    margin-bottom: 2vh;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
+
 
 .latest-edition-text {
     color: #000;
