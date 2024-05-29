@@ -1,6 +1,8 @@
 import './HomePage.css';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Homepage = () => {
   const articles = [
@@ -9,6 +11,45 @@ const Homepage = () => {
     { theme: 'THÈME', title: 'Nom de l\'article', color: '#F3C14A' },
     { theme: 'THÈME', title: 'Nom de l\'article', color: '#EA5923' },
   ];
+
+  const Navigate = useNavigate();
+
+
+  const handleBuyNowClick = async () => {
+    try {
+      const paymentMethod = 'pm_card_visa'; // Remplacez par la méthode de paiement appropriée
+      const successUrl = window.location.origin; // Remplacez '/success' par la route de votre choix
+      const cancelUrl = window.location.origin; // Remplacez '/checkout' par la route de votre choix
+      //Pour le moment on assume que l'id du magazine est le price id, pour la V1 il faudrait faire une recherche dans l'Api à partir de l'id du magazine
+      const idMagazine = "price_1PJMkzG3h0hR2My9pBf1gDTh"
+
+      const response = await axios.post('http://localhost:3000/stripe/purchase', {
+        paymentMethod,
+        idMagazine: idMagazine,
+        successUrl,
+        cancelUrl,
+      });
+
+      const { success, session } = response.data;
+      if (success && session.url) {
+        window.location.href = session.url; // Redirige l'utilisateur vers l'URL de la session de checkout
+      } else {
+        alert('Failed to create session');
+      }
+    } catch (error) {
+      console.error('Error creating one-time purchase session:', error);
+      alert('An error occurred during the purchase process.');
+    }
+  }
+
+  // Function to handle click on the "Devenir membre" button
+  const handleBecomeMemberClick = () => {
+    Navigate("/Pricing"); // replace "/become-member" with your desired path
+  }
+
+  const handleMagazineClick = () => {
+    Navigate(`/Magazine`); // replace with your desired path
+  };
 
   return (
     <>
@@ -24,8 +65,8 @@ const Homepage = () => {
             <p>DISPONIBLE EN ABONNEMENT <strong>DÈS MAINTENANT</strong></p>
             <h1>Magazine édition 1</h1>
             <div className="button-container">
-              <button className="button-block">Acheter maintenant</button>
-              <button className="button-block">Devenir membre</button>
+              <button className="button-block" onClick={handleBuyNowClick}>Acheter maintenant</button>
+              <button className="button-block" onClick={handleBecomeMemberClick}>Devenir membre</button>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. luctus nec ullamcorper mattis, pulvinar dapibus leo</p>
           </div>
@@ -41,7 +82,7 @@ const Homepage = () => {
           <div className="articles-row">
             {articles.map((article, index) => (
               <div key={index} className="article-card">
-                <div className="article-image" style={{ backgroundColor: article.color }}></div>
+                <div className="magazine-article-image" style={{ backgroundColor: article.color }}></div>
                 <div className="article-content">
                   <p className="article-theme">{article.theme}</p>
                   <h2 className="article-title">{article.title}</h2>
@@ -78,14 +119,14 @@ const Homepage = () => {
             <p className="latest-edition-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Loremdipiscing elit.
             </p>
-            <button className="latest-edition-button">Magazine</button>
+            <button className="latest-edition-button" onClick={handleMagazineClick}>Magazine</button>
           </div>
           <div className="latest-edition-content">
             <div className="latest-edition-images">
               <img src="logo.png" alt="Magazine Cover" className="main-image" />
               <img src="logo.png" alt="Magazine Cover" className="secondary-image" />
             </div>
-            <p className="latest-edition-price">PRIX À L'UNITÉ SANS ABONNEMENT : 22 €</p>
+            <p className="latest-edition-price">PRIX À L'UNITÉ SANS ABONNEMENT : 19.99 €</p>
           </div>
         </div>
       </div>

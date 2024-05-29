@@ -7,7 +7,12 @@ import SinglePayment from "./components/Payment/SinglePayment.tsx";
 import Account from "./components/Account/MyAccount.tsx";
 import Homepage from "./components/HomePage/HomePage.tsx";
 import Magazine from "./components/Magazine/Magazine.tsx";
+import ArticleFree from "./components/Magazine/ArticleFree.tsx";
 import Contact from "./components/Contact/Contact.tsx";
+import { loadStripe } from '@stripe/stripe-js';
+
+
+loadStripe('pk_test_51PFyI9G3h0hR2My9h8ZsEzw0f1NvSOBI1qz6yewT8jODUM4llCo0aZzXTwrwYzhfOkDYJ8hrSd6zlGiukOeabJAp00DzCbFHmb');
 
 function App() {
 
@@ -23,6 +28,7 @@ function App() {
         <Route path="/Payment" element={<SinglePayment />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Magazine" element={<Magazine />} />
+        <Route path="/ArticleFree" element={<ArticleFree />} />
       </Routes>
     </Router>
   );

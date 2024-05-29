@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './Authentification.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 import { Helmet } from 'react-helmet';
 
 function Authentification() {

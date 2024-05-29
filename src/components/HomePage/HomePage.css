@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
     width: 47vw;
+    color: #000;
 }
 
 .content-section p {
@@ -120,7 +121,7 @@
     max-width: 20vw;
 }
 
-.article-image {
+.magazine-article-image {
     height: 150px;
     margin-bottom: 10px;
 }
@@ -131,8 +132,7 @@
 
 .article-theme {
     color: #000;
-    font-family: Satoshi;
-    font-size: 16px;
+    font-size: 2vh;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -143,8 +143,14 @@
 .article-title {
     font-family: 'Le Murmure', sans-serif;
     font-size: 18px;
-    margin-top: -3vh;
-    margin-bottom: 3vh;
+    margin-top: -2vh;
+    margin-bottom: 2vh;
+    color: #000;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.9px;
 }
 
 .article-description {

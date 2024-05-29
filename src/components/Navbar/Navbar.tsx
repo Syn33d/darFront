@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
     const [isMediumOrSmaller, setIsMediumOrSmaller] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [isConnected, setIsConnected] = useState(!!localStorage.getItem('token'));
+    const Navigate = useNavigate();
 
     const handleLogout = () => {
         // Supprimer le token du localStorage
@@ -18,6 +20,10 @@ const Navbar = () => {
         // Rediriger l'utilisateur vers la page de connexion
         window.location.href = '/Authentification';
     }
+
+    const handleLogoClick = () => {
+        Navigate('/');
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -44,7 +50,7 @@ const Navbar = () => {
                 <nav className="navbar">
                     <div className="wrapper">
                         <div className="top__wrapper">
-                            <div className="logo">
+                            <div className="logo" onClick={handleLogoClick}>
                                 <img src={logo} alt="logo" />
                             </div>
 
@@ -60,25 +66,25 @@ const Navbar = () => {
                             <ul className="nav-menu">
                                 <li className="nav-menu__item">
                                     <a href="/Magazine" className="nav-menu__link">
-                                        <span className="text">Magazine</span>
+                                        <span className="textNavBar">Magazine</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-menu__item">
                                     <a href="#" className="nav-menu__link">
-                                        <span className="text">Evènement</span>
+                                        <span className="textNavBar">Evènement</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-menu__item">
                                     <a href="/Pricing" className="nav-menu__link">
-                                        <span className="text">Abonnements</span>
+                                        <span className="textNavBar">Abonnements</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-menu__item">
                                     <a href="/Contact" className="nav-menu__link">
-                                        <span className="text">Contact</span>
+                                        <span className="textNavBar">Contact</span>
                                     </a>
                                 </li>
                             </ul>
@@ -167,4 +173,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-

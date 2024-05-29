@@ -64,5 +64,6 @@ label {
 }
 
 .contact-form button:hover {
-  background-color: #EA5923;
+  border: 0.75px solid #EA5923;
+  color: #EA5923;
 }

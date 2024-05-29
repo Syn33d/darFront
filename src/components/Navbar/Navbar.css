@@ -10,15 +10,22 @@
   width: 100vw;
   height: 24vh;
   z-index: 3;
+  color: #000;
+  font-size: 1.5vh;
+  line-height: normal;
+  margin-top: 2vh;
 }
 
 .navbar::after {
   content: "";
   position: absolute;
-  left: 3rem; /* Centrer la bordure */
+  left: 3rem;
+  /* Centrer la bordure */
   bottom: 0;
-  width: 94vw; /* Largeur de la bordure */
-  border-bottom: 1px solid #000; /* Style de la bordure */
+  width: 94vw;
+  /* Largeur de la bordure */
+  border-bottom: 1px solid #000;
+  /* Style de la bordure */
 }
 
 .navbar.active {
@@ -32,10 +39,10 @@
 
 /* Disposition de la partie supérieure de la navbar */
 .top__wrapper {
-    display: flex;
-    align-items: baseline;
-    width: 94vw;
-  }
+  display: flex;
+  align-items: baseline;
+  width: 94vw;
+}
 
 .logo {
   display: flex;
@@ -82,6 +89,14 @@
   padding: 0;
 }
 
+.textNavBar {
+  color: black; /* Ensures the default color is used */
+}
+
+.textNavBar:hover {
+  font-family: "Satoshi-LightItalic";
+}
+
 .nav-menu__account {
   color: #000;
   margin-left: auto;
@@ -95,6 +110,7 @@
 .social-icons {
   display: flex;
   gap: 1rem;
+  font-size: large;
 }
 
 .social-icon {
@@ -166,7 +182,8 @@
     gap: 1rem;
     position: fixed;
     top: 85px;
-    right: 0;;
+    right: 0;
+    ;
     width: 100%;
     padding: 10px;
   }
@@ -291,7 +308,8 @@
   }
 
   .menu-toggle.open {
-    height: auto; /* Ajuster la hauteur automatiquement */
+    height: auto;
+    /* Ajuster la hauteur automatiquement */
   }
 }
 
