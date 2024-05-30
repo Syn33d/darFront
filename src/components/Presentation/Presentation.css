@@ -44,7 +44,6 @@ line-height: normal;
 .button-container {
 display: flex;
 justify-content: space-between;
-width: 30vw;
 }
 
 .button-container button {
@@ -78,9 +77,5 @@ color: #EA5923;
     font-size: 20px;
     display: flex;
     justify-content: center;
-}
-
-.button-container {
-    width: 0;
 }
 }
