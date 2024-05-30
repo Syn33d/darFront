@@ -65,7 +65,7 @@ const Homepage = () => {
           <div className="content-section">
             <p>DISPONIBLE EN ABONNEMENT <strong>DÈS MAINTENANT</strong></p>
             <h1>Magazine édition 1</h1>
-            <div className="button-container">
+            <div className="homePage-button-container">
               <button className="button-block" onClick={handleBuyNowClick}>Acheter maintenant</button>
               <button className="button-block" onClick={handleBecomeMemberClick}>Devenir membre</button>
             </div>
@@ -137,4 +137,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-
