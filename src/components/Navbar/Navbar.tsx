@@ -51,7 +51,7 @@ const Navbar = () => {
                     <div className="wrapper">
                         <div className="top__wrapper">
                             <div className="logo" onClick={handleLogoClick}>
-                                <img src={logo} alt="logo" />
+                                <img src="/logo.png" alt="logo" />
                             </div>
 
 
@@ -141,7 +141,7 @@ const Navbar = () => {
                         <div className="wrapper">
                             <div className="top__wrapper">
                                 <div className="logo" onClick={handleLogoClick}>
-                                    <img src={logo} alt="logo" />
+                                    <img src="/DAR media - Beige.png" alt="logo" />
                                 </div>
 
 

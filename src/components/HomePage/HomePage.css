@@ -53,13 +53,12 @@
     line-height: normal;
 }
 
-.button-container {
+.homePage-button-container {
     display: flex;
     justify-content: space-between;
-    width: 30vw;
 }
 
-.button-container button {
+.homePage-button-container button {
     width: 12.5vw;
     color: black;
     border-radius: 30px;
@@ -69,7 +68,7 @@
     background: rgba(255, 255, 255, 0.00);
 }
 
-.button-container button:hover {
+.homePage-button-container button:hover {
     border: 0.75px solid #EA5923;
     color: #EA5923;
 }
@@ -470,7 +469,7 @@
   }
   
   /* CSS pour les petits écrans */
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
     .gif {
       flex-direction: column;
       align-items: center;
@@ -482,17 +481,15 @@
     }
   
     .button-block {
-        padding: 20px 40px;
+        padding: 0px 80px;
         font-size: 20px;
-        margin: 20px;
-    }
-
-    .button-container {
-        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     
-    .button-container button {
-        width: 100%;
+    .homePage-button-container button {
+        width: 0;
+
     }
 
     .articles-header {
