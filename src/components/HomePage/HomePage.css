@@ -186,7 +186,7 @@
     border-radius: 500px;
     transition: background-color 0.3s ease;
     border: 0.75px solid var(--Noir, #000);
-    background: rgba(255, 255, 255, 0.00);
+    background: #F9F6EF;;
     position: relative;
     /* Add this */
     bottom: -30px;
@@ -489,6 +489,7 @@
     
     .homePage-button-container button {
         width: 0;
+
     }
 
     .articles-header {
