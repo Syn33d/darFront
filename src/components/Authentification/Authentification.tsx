@@ -54,8 +54,7 @@ function Authentification() {
           username,
           password
         });
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userId', response.data.userId);
+        localStorage.setItem('token', response.data.access_token);
         alert('Signup successful');
         setTimeout(() => {
           navigate("/Account");
