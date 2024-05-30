@@ -1,63 +1,86 @@
 .mainPresentationPage {
-        width: 94vw;
-        position: initial;
-        margin-top: 5vh;
-        margin-left: 3vw;
+    width: 94vw;
+    position: initial;
+    margin-top: 5vh;
+    margin-left: 3vw;
 }
 
 .gif {
-    display: flex;
+display: flex;
 }
 
 .gif-section img {
-    width: 47vw;
+width: 47vw;
 }
 
 .content-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 47vw;
-    color: #000;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 47vw;
+color: #000;
 }
 
 .content-section h1 {
-    width: 30vw;
+width: 30vw;
 
 }
 
 .contentPresentation {
-    display: flex;
-    text-align: justify;
+display: flex;
+text-align: justify;
 }
 
 .contentPresentation strong {
-    color: #000;
-    font-family: 'Satoshi-Bold';
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+color: #000;
+font-family: 'Satoshi-Bold';
+font-style: normal;
+font-weight: 500;
+line-height: normal;
 }
 
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    width: 30vw;
+display: flex;
+justify-content: space-between;
+width: 30vw;
 }
 
 .button-container button {
-    width: 12.5vw;
-    color: black;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 0.75px solid var(--Noir, #000);
-    background: rgba(255, 255, 255, 0.00);
+width: 12.5vw;
+color: black;
+border-radius: 30px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+border: 0.75px solid var(--Noir, #000);
+background: rgba(255, 255, 255, 0.00);
 }
 
 .button-container button:hover {
-    border: 0.75px solid #EA5923;
-    color: #EA5923;
+border: 0.75px solid #EA5923;
+color: #EA5923;
+}
+
+@media (max-width: 920px) {
+.gif {
+  flex-direction: column;
+  align-items: center;
+}
+
+.gif-section,
+.content-section {
+  width: 100%;
+}
+
+.button-block {
+    padding: 0px 80px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    width: 0;
+}
 }
