@@ -124,8 +124,8 @@ const Homepage = () => {
           </div>
           <div className="latest-edition-content">
             <div className="latest-edition-images">
-              <img src="logo.png" alt="Magazine Cover" className="main-image" />
-              <img src="logo.png" alt="Magazine Cover" className="secondary-image" />
+              <img src="Accueil1.jpg" alt="Magazine Cover" className="main-image" />
+              <img src="Accueil1.jpg" alt="Magazine Cover" className="secondary-image" />
             </div>
             <p className="latest-edition-price">PRIX À L'UNITÉ SANS ABONNEMENT : 19.99 €</p>
           </div>
@@ -137,3 +137,4 @@ const Homepage = () => {
 };
 
 export default Homepage;
+

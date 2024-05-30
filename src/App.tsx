@@ -9,6 +9,7 @@ import Homepage from "./components/HomePage/HomePage.tsx";
 import Magazine from "./components/Magazine/Magazine.tsx";
 import ArticleFree from "./components/Magazine/ArticleFree.tsx";
 import Contact from "./components/Contact/Contact.tsx";
+import Presentation from "./components/Presentation/Presentation.tsx";
 import { loadStripe } from '@stripe/stripe-js';
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Account" element={<Account />} />
         <Route path="/Magazine" element={<Magazine />} />
         <Route path="/ArticleFree" element={<ArticleFree />} />
+        <Route path="/Presentation" element={<Presentation />} />
       </Routes>
     </Router>
   );

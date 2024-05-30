@@ -65,7 +65,13 @@ const Navbar = () => {
                         <div className="nav-group">
                             <ul className="nav-menu">
                                 <li className="nav-menu__item">
-                                    <a href="/Magazine" className="nav-menu__link">
+                                    <a href="/Presentation" className="nav-menu__link">
+                                        <span className="textNavBar">DAR</span>
+                                    </a>
+                                </li>
+
+                                <li className="nav-menu__item">
+                                    <a href="/Pricing" className="nav-menu__link">
                                         <span className="textNavBar">Magazine</span>
                                     </a>
                                 </li>
@@ -79,6 +85,12 @@ const Navbar = () => {
                                 <li className="nav-menu__item">
                                     <a href="/Pricing" className="nav-menu__link">
                                         <span className="textNavBar">Abonnements</span>
+                                    </a>
+                                </li>
+
+                                <li className="nav-menu__item">
+                                    <a href="/Magazine" className="nav-menu__link">
+                                        <span className="textNavBar">Articles</span>
                                     </a>
                                 </li>
 
@@ -143,7 +155,13 @@ const Navbar = () => {
                             <div className="nav-group">
                                 <ul className="nav-menu">
                                     <li className="nav-menu__item">
-                                        <a href="/Magazine" className="nav-menu__link">
+                                        <a href="/Presentation" className="nav-menu__link">
+                                            <span className="textNavBar">DAR</span>
+                                        </a>
+                                    </li>
+
+                                    <li className="nav-menu__item">
+                                        <a href="/Pricing" className="nav-menu__link">
                                             <span className="textNavBar">Magazine</span>
                                         </a>
                                     </li>
@@ -157,6 +175,12 @@ const Navbar = () => {
                                     <li className="nav-menu__item">
                                         <a href="/Pricing" className="nav-menu__link">
                                             <span className="textNavBar">Abonnements</span>
+                                        </a>
+                                    </li>
+
+                                    <li className="nav-menu__item">
+                                        <a href="/Magazine" className="nav-menu__link">
+                                            <span className="textNavBar">Articles</span>
                                         </a>
                                     </li>
 
