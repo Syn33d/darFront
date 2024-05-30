@@ -562,8 +562,8 @@
     }
 
     .latest-edition-button {
-        position: static;
-        width: 100%;
+        width: 50%;
+        margin-bottom: 5vh;
     }
 
     .main-image {
