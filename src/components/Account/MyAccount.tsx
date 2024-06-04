@@ -42,7 +42,7 @@ const Account = () => {
 
             const fetchUser = async () => {
                 try {
-                    const response = await axios.get(`http://172.232.36.169:3000/user/${userId}`, {
+                    const response = await axios.get(`https://172.232.36.169:3000/user/${userId}`, {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
@@ -89,7 +89,7 @@ const Account = () => {
 
     const handleSubmit = async () => {
         try {
-            await axios.patch(`http://172.232.36.169:3000/user/${userId}`, formData, {
+            await axios.patch(`https://172.232.36.169:3000/user/${userId}`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -98,7 +98,7 @@ const Account = () => {
 
             if (isEditingPassword) {
                 if (newPassword && newPassword === confirmPassword) {
-                    await axios.patch(`http://172.232.36.169:3000/user/${userId}/password`, { password: newPassword }, {
+                    await axios.patch(`https://172.232.36.169:3000/user/${userId}/password`, { password: newPassword }, {
                         headers: {
                             'Authorization': `Bearer ${token}`
                         }
