@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const magazines = [
   {
     id: 1,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree1.png',
     title: 'Magazine 1',
     description: 'Description of Magazine 1',
     season: 'Winter',
@@ -21,7 +21,7 @@ const magazines = [
   },
   {
     id: 2,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree2.png',
     title: 'Magazine 2',
     description: 'Description of Magazine 2',
     season: 'Spring',
@@ -33,7 +33,7 @@ const magazines = [
   },
   {
     id: 3,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree3.png',
     title: 'Magazine 3',
     description: 'Description of Magazine 3',
     season: 'Summer',
@@ -45,7 +45,7 @@ const magazines = [
   },
   {
     id: 4,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree4.png',
     title: 'Magazine 4',
     description: 'Description of Magazine 4',
     season: 'Fall',
@@ -57,7 +57,7 @@ const magazines = [
   },
   {
     id: 5,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree5.png',
     title: 'Magazine 5',
     description: 'Description of Magazine 5',
     season: 'Winter',
@@ -69,7 +69,7 @@ const magazines = [
   },
   {
     id: 6,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree6.jpeg',
     title: 'Magazine 6',
     description: 'Description of Magazine 6',
     season: 'Spring',
@@ -81,7 +81,7 @@ const magazines = [
   },
   {
     id: 7,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree1.png',
     title: 'Magazine 7',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     season: 'Summer',
@@ -93,7 +93,7 @@ const magazines = [
   },
   {
     id: 8,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree2.png',
     title: 'Magazine 8',
     description: 'Description of Magazine 8',
     season: 'Fall',
@@ -105,7 +105,7 @@ const magazines = [
   },
   {
     id: 9,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree3.png',
     title: 'Magazine 9',
     description: 'Description of Magazine 9',
     season: 'Winter',
@@ -117,7 +117,7 @@ const magazines = [
   },
   {
     id: 10,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree4.png',
     title: 'Magazine 10',
     description: 'Description of Magazine 10',
     season: 'Spring',
@@ -129,7 +129,7 @@ const magazines = [
   },
   {
     id: 11,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree5.png',
     title: 'Magazine 11',
     description: 'Description of Magazine 11',
     season: 'Summer',
@@ -141,7 +141,7 @@ const magazines = [
   },
   {
     id: 12,
-    image: '../../logo.png',
+    image: '../../Image ArticleFree6.jpeg',
     title: 'Magazine 12',
     description: 'Description of Magazine 12',
     season: 'Fall',
@@ -266,6 +266,7 @@ const Magazine = () => {
             <div key={magazine.id} className="magazine-item">
               <img
                 src={magazine.image}
+                style={{width: '50%', height: '50%'}}
                 alt={magazine.title}
                 onClick={() => handleMagazineClick(magazine)}
               />
