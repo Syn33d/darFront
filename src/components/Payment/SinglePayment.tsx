@@ -14,7 +14,7 @@ function SinglePayment() {
             const cancelUrl = window.location.origin ; // Remplacez '/checkout' par la route de votre choix
 
 
-            const response = await axios.post('http://localhost:3000/stripe/purchase', {
+            const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
                 paymentMethod,
                 idMagazine: productId,
                 successUrl,
