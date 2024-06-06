@@ -21,7 +21,7 @@ function PricingPage() {
         <div className="form_wrapper">
           <input type="radio" className="radio" name="radio" id="firstTable" defaultChecked />
           <div className="tile">
-            <h3 className="firstTable">Yearly</h3>
+            <h3 className="firstTable">Abonnements</h3>
           </div>
           <span className="shape"></span>
           <div className="form_wrap">
