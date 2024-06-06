@@ -13,7 +13,7 @@ function PasswordReset() {
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://172.232.36.169:3000/auth/reset-password', { email });
+      const response = await axios.post('http://api.dar-site.com/auth/reset-password', { email });
       setToken(response.data.token); // assuming the API returns a token
       setStep('reset');
       localStorage.setItem('token', response.data.token);
@@ -36,7 +36,7 @@ function PasswordReset() {
         return;
       }
 
-      await axios.post('http://172.232.36.169:3000/auth/reset-password/confirm', { password, email, token });
+      await axios.post('http://api.dar-site.com/auth/reset-password/confirm', { password, email, token });
       alert('Password reset successful');
     } catch (error) {
       console.error(error);

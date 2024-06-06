@@ -31,7 +31,7 @@ function Authentification() {
     e.preventDefault();
     if (isLogin) {
       try {
-        const response = await axios.post('https://172.232.36.169:3000/auth/login', {
+        const response = await axios.post('https://api.dar-site.com/auth/login', {
           username,
           password
         });
@@ -50,7 +50,7 @@ function Authentification() {
         return;
       }
       try {
-        const response = await axios.post('https://172.232.36.169:3000/auth/register', {
+        const response = await axios.post('https://api.dar-site.com/auth/register', {
           username,
           password
         });
