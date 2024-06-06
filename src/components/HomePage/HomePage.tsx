@@ -108,7 +108,7 @@ const Homepage = () => {
               <img src="Soleil.png" alt="Logo 2" className="small-logo" />
               <img src="Nuage.png" alt="Logo 3" className="small-logo" />
             </div>
-            <h2>Description rapide de l'événement 1 de DAR prévu le 30 juin</h2>
+            <h2>L'évènement 06.2024</h2>
             <p>Rejoignez-nous le 30 juin pour une soirée exceptionnelle dédiée aux artistes émergents, avec des performances en direct, des expositions interactives et des rencontres inoubliables. </p>
             <button className="event-button">Réserver mes billets</button>
           </div>
