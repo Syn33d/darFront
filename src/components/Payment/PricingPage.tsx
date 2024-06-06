@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import './PricingPage.css';
 import { Helmet } from 'react-helmet';
 
@@ -12,7 +11,7 @@ declare global {
 }
 
 function PricingPage() {
-  
+
   return (
     <>
       <Helmet>
