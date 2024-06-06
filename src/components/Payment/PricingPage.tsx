@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import './PricingPage.css';
 import { Helmet } from 'react-helmet';
 
@@ -12,23 +11,6 @@ declare global {
 }
 
 function PricingPage() {
-  const [, setIsFirstTable] = useState(true);
-
-  const handleFirstTableClick = () => {
-    setIsFirstTable(true);
-    const firstTableElement = document.getElementById('firstTable') as HTMLInputElement;
-    if (firstTableElement) {
-      firstTableElement.checked = true;
-    }
-  };
-
-  const handleSecondTableClick = () => {
-    setIsFirstTable(false);
-    const secondTableElement = document.getElementById('secondTable') as HTMLInputElement;
-    if (secondTableElement) {
-      secondTableElement.checked = true;
-    }
-  };
 
   return (
     <>
