@@ -64,12 +64,12 @@ const Homepage = () => {
 
           <div className="content-section">
             <p>DISPONIBLE EN ABONNEMENT <strong>DÈS MAINTENANT</strong></p>
-            <h1>Magazine édition 1</h1>
+            <h1>Édition 1 du magazine disponible à l'achat depuis le 1 juin</h1>
             <div className="homePage-button-container">
               <button className="button-block" onClick={handleBuyNowClick}>Acheter maintenant</button>
               <button className="button-block" onClick={handleBecomeMemberClick}>Devenir membre</button>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. luctus nec ullamcorper mattis, pulvinar dapibus leo</p>
+            <p>Plongez dans notre première édition avec des articles exclusifs sur les artistes émergents, les techniques artistiques modernes et bien plus encore.</p>
           </div>
         </div>
 
@@ -108,8 +108,8 @@ const Homepage = () => {
               <img src="Soleil.png" alt="Logo 2" className="small-logo" />
               <img src="Nuage.png" alt="Logo 3" className="small-logo" />
             </div>
-            <h2>L'évènement 06.2024</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <h2>Description rapide de l'événement 1 de DAR prévu le 30 juin</h2>
+            <p>Rejoignez-nous le 30 juin pour une soirée exceptionnelle dédiée aux artistes émergents, avec des performances en direct, des expositions interactives et des rencontres inoubliables. </p>
             <button className="event-button">Réserver mes billets</button>
           </div>
         </div>

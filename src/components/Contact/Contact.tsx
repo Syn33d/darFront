@@ -8,7 +8,7 @@ function Contact() {
             <Navbar />
             <div className="contact-form-container">
                 <h1>Formulaire de Contact</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <p>Pour toutes informations, contactez l'équipe DAR via le formulaire ci-dessous.</p>
                 <form action="#" method="post" className="contact-form">
                     <div className="name-fields">
                         <div className="field-group">
