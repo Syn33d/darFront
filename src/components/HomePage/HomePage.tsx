@@ -22,9 +22,9 @@ const Homepage = () => {
       const successUrl = window.location.origin; // Remplacez '/success' par la route de votre choix
       const cancelUrl = window.location.origin; // Remplacez '/checkout' par la route de votre choix
       //Pour le moment on assume que l'id du magazine est le price id, pour la V1 il faudrait faire une recherche dans l'Api à partir de l'id du magazine
-      const idMagazine = "price_1PJMkzG3h0hR2My9pBf1gDTh"
+      const idMagazine = "price_1PO28DG3h0hR2My9Yq3vE4cn"
 
-      const response = await axios.post('http://localhost:3000/stripe/purchase', {
+      const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
         paymentMethod,
         idMagazine: idMagazine,
         successUrl,

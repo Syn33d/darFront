@@ -13,7 +13,7 @@ function PasswordReset() {
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://api.dar-site.com/auth/reset-password', { email });
+      const response = await axios.post('https://api.dar-site.com/auth/reset-password', { email });
       setToken(response.data.token); // assuming the API returns a token
       setStep('reset');
       localStorage.setItem('token', response.data.token);

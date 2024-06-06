@@ -203,7 +203,7 @@ const Magazine = () => {
       const cancelUrl = window.location.origin; // Replace '/checkout' with the route of your choice
       const idMagazine = "price_1PJMkzG3h0hR2My9pBf1gDTh"; // For now, assuming the magazine id is the price id
 
-      const response = await axios.post('http://localhost:3000/stripe/purchase', {
+      const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
         paymentMethod,
         idMagazine,
         successUrl,

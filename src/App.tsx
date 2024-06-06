@@ -13,7 +13,7 @@ import Presentation from "./components/Presentation/Presentation.tsx";
 import { loadStripe } from '@stripe/stripe-js';
 
 
-loadStripe('pk_test_51PFyI9G3h0hR2My9h8ZsEzw0f1NvSOBI1qz6yewT8jODUM4llCo0aZzXTwrwYzhfOkDYJ8hrSd6zlGiukOeabJAp00DzCbFHmb');
+loadStripe('pk_live_51PFyI9G3h0hR2My98cpysUelbjSwFFXf6Td14iADtumZlDXTClojCtvekZ3BjSM3vlfmVGH43KfgdD1MtK3s3c3a00bRIIuK5B');
 
 function App() {
 

@@ -166,7 +166,7 @@ const Account = () => {
                         </div>
                         <button type="submit">Mettre à jour</button>
                     </form>
-                    <button onClick={() => window.location.href = "https://billing.stripe.com/p/login/test_7sI5lo1SO9pydWg9AA"}> Accéder au portail client Stripe</button>
+                    <button onClick={() => window.location.href = "https://billing.stripe.com/p/login/3cs17K1ibgYHeCAfYY"}> Accéder au portail client Stripe</button>
                 </div>
             </div>
         </>
