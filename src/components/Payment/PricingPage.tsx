@@ -60,8 +60,8 @@ function PricingPage() {
             </div>
 
             <div className="form_fild secondTable_form">
-              <stripe-pricing-table pricing-table-id="prctbl_1PJLmtG3h0hR2My9aGwD0h6G"
-                publishable-key="pk_test_51PFyI9G3h0hR2My9h8ZsEzw0f1NvSOBI1qz6yewT8jODUM4llCo0aZzXTwrwYzhfOkDYJ8hrSd6zlGiukOeabJAp00DzCbFHmb">
+              <stripe-pricing-table pricing-table-id="prctbl_1PO2h2G3h0hR2My9jjbJGE3z"
+                publishable-key="pk_live_51PFyI9G3h0hR2My98cpysUelbjSwFFXf6Td14iADtumZlDXTClojCtvekZ3BjSM3vlfmVGH43KfgdD1MtK3s3c3a00bRIIuK5B">
               </stripe-pricing-table>
             </div>
           </div>
