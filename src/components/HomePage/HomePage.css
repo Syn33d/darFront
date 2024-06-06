@@ -329,10 +329,11 @@
 
 .section[data-bg="musique"]::before {
     background-image: url('../../../public/musique.png');
+    z-index: 2;
 }
 
 .section[data-bg="peinture"]::before {
-    background-image: url('../../../public/Image\ ArticleFree1.png');
+    background-image: url('../../../public/Image ArticleFree1.png');
 }
 
 .section[data-bg="createurs"]::before {
