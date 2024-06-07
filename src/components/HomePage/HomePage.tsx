@@ -7,10 +7,10 @@ import axios from 'axios';
 
 const Homepage = () => {
   const articles = [
-    { theme: 'THÈME', title: 'Nom de l\'article', color: '#EED5E4' },
-    { theme: 'THÈME', title: 'Nom de l\'article', color: '#F39B8E' },
-    { theme: 'THÈME', title: 'Nom de l\'article', color: '#F3C14A' },
-    { theme: 'THÈME', title: 'Nom de l\'article', color: '#EA5923' },
+    { theme: 'THÈME', title: 'Découvrez les artistes émergents à suivre cette année', color: '#EED5E4', description: 'Plongez dans notre sélection des jeunes artistes prometteurs qui révolutionnent le monde de l\'art contemporain avec leurs œuvres innovantes et captivantes.' },
+    { theme: 'THÈME', title: 'Techniques artistiques modernes : les tendances à ne pas manquer', color: '#F39B8E', description: 'Explorez les nouvelles techniques de peinture et les dernières tendances en art numérique qui redéfinissent les pratiques artistiques contemporaines.' },
+    { theme: 'THÈME', title: 'Critique d\'art contemporain : une analyse approfondie', color: '#F3C14A', description: 'Une analyse détaillée des œuvres les plus marquantes de la scène artistique actuelle, avec des critiques d\'experts et des insights passionnants.' },
+    { theme: 'THÈME', title: 'Les événements artistiques à ne pas manquer cette année', color: '#EA5923', description: 'Un guide complet des expositions d\'art contemporain et des foires internationales à venir, pour ne rien manquer des événements majeurs de la scène artistique.' },
   ];
 
   const Navigate = useNavigate();
@@ -88,7 +88,7 @@ const Homepage = () => {
                   <p className="article-theme">{article.theme}</p>
                   <h2 className="homepage-article-title-row">{article.title}</h2>
                   <p className="article-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Ut elit tellus</strong>, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  {article.description}  
                   </p>
                   <p className="article-footer">rédigé par DAR | JJ.MM.AA</p>
                 </div>
