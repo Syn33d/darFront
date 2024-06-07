@@ -118,7 +118,7 @@ const Homepage = () => {
           <div className="latest-edition-left">
             <h1 className="latest-edition-title">Dernière édition</h1>
             <p className="latest-edition-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Loremdipiscing elit.
+            Découvrez notre dernière édition de DAR, où l'art contemporain prend vie ! Plongez dans un monde d'expressions artistiques innovantes avec nos articles captivants, critiques d'art approfondies et interviews exclusives. Que vous soyez un passionné d'art ou un artiste émergent en quête d'inspiration, ne manquez pas cette occasion de vous immerger dans la culture contemporaine.            
             </p>
             <button className="latest-edition-button" onClick={handleMagazineClick}>Magazine</button>
           </div>
@@ -127,7 +127,7 @@ const Homepage = () => {
               <img src="Accueil1.jpg" alt="Magazine Cover" className="main-image" />
               <img src="Accueil1.jpg" alt="Magazine Cover" className="secondary-image" />
             </div>
-            <p className="latest-edition-price">PRIX À L'UNITÉ SANS ABONNEMENT : 19.99 €</p>
+            <p className="latest-edition-price">PRIX À L'UNITÉ SANS ABONNEMENT : 19.90 €</p>
           </div>
         </div>
       </div>
