@@ -324,7 +324,7 @@
 }
 
 .section[data-bg="photo"]::before {
-    background-image: url('../../../public/logo.png');
+    background-image: url('../../../public/photographie.png');
 }
 
 .section[data-bg="musique"]::before {
@@ -336,7 +336,7 @@
 }
 
 .section[data-bg="createurs"]::before {
-    background-image: url('../../../public/logo.png');
+    background-image: url('../../../public/createurs.jpg');
 }
 
 .latest-edition-container {
