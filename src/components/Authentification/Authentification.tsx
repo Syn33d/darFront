@@ -4,6 +4,21 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
+function isPasswordStrong(password: string) {
+  const minLength = 12;
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSpecialChar = /[!@#$%^&*]/.test(password);
+
+  return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
+}
+
+function isEmailValid(email: string) {
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return isValid;
+}
+
 function Authentification() {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState('');
@@ -49,6 +64,17 @@ function Authentification() {
         alert('Passwords do not match');
         return;
       }
+
+      if (!isEmailValid(username)) {
+        alert('Email is not valid');
+        return;
+      }
+      
+      if (!isPasswordStrong(password)) {
+        alert('Le mot de passe doit contenir au moins 12 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.');
+        return;
+      }
+
       try {
         const response = await axios.post('https://api.dar-site.com/auth/register', {
           username,
@@ -92,7 +118,7 @@ function Authentification() {
           <form className="form_wrap" onSubmit={handleSubmit}>
             <div className="form_fild login_form">
               <div className="input_group">
-                <input type="username" className="input" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="email" className="input" placeholder="email" value={username} onChange={(e) => setUsername(e.target.value)} />
               </div>
               <div className="input_group">
                 <input type="password" className="input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -110,7 +136,7 @@ function Authentification() {
 
             <div className="form_fild signup_form ">
               <div className="input_group">
-                <input type="username" className="input" placeholder="username Address" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <input type="email" className="input" placeholder="Email Address" value={username} onChange={(e) => setUsername(e.target.value)} />
               </div>
               <div className="input_group">
                 <input type="password" className="input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
