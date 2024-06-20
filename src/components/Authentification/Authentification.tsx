@@ -53,7 +53,7 @@ function Authentification() {
         localStorage.setItem('token', response.data.access_token);
         alert('Login successful');
         setTimeout(() => {
-          navigate("/Account");
+          navigate("/Home");
         }, 3000);
       } catch (error) {
         console.error(error);
@@ -83,7 +83,7 @@ function Authentification() {
         localStorage.setItem('token', response.data.access_token);
         alert('Signup successful');
         setTimeout(() => {
-          navigate("/Account");
+          navigate("/Home");
         }, 3000);
       } catch (error) {
         console.error(error);
