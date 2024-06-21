@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+//import axios from 'axios';
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import './Presentation.css';
+import handleBuyNowClick from "../Payment/HandleBuyNowClick";
 
 const Presentation = () => {
     const Navigate = useNavigate();
@@ -13,33 +14,33 @@ const Presentation = () => {
     }
 
     //Fonction pour gérer le clic sur le bouton "Magazine"
-    const handleBuyNowClick = async () => {
-        try {
-            const paymentMethod = 'pm_card_visa'; 
-            const successUrl = window.location.origin; 
-            const cancelUrl = window.location.origin; 
-            //Pour le moment on assume que l'id du magazine est le price id, pour la V1 il faudrait faire une recherche dans l'Api à partir de l'id du magazine
-            const idMagazine = "price_1PO28DG3h0hR2My9Yq3vE4cn"
+    // const handleBuyNowClick = async () => {
+    //     try {
+    //         const paymentMethod = 'pm_card_visa'; 
+    //         const successUrl = window.location.origin; 
+    //         const cancelUrl = window.location.origin; 
+    //         //Pour le moment on assume que l'id du magazine est le price id, pour la V1 il faudrait faire une recherche dans l'Api à partir de l'id du magazine
+    //         const idMagazine = "price_1PO28DG3h0hR2My9Yq3vE4cn"
 
-            // Envoie une requête pour créer une session de paiement unique
-            const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
-                paymentMethod,
-                idMagazine: idMagazine,
-                successUrl,
-                cancelUrl,
-            });
+    //         // Envoie une requête pour créer une session de paiement unique
+    //         const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
+    //             paymentMethod,
+    //             idMagazine: idMagazine,
+    //             successUrl,
+    //             cancelUrl,
+    //         });
 
-            const { success, session } = response.data;
-            if (success && session.url) {
-                window.location.href = session.url; // Redirige l'utilisateur vers l'URL de la session de checkout
-            } else {
-                alert('Failed to create session');
-            }
-        } catch (error) {
-            console.error('Error creating one-time purchase session:', error);
-            alert('An error occurred during the purchase process.');
-        }
-    }
+    //         const { success, session } = response.data;
+    //         if (success && session.url) {
+    //             window.location.href = session.url; // Redirige l'utilisateur vers l'URL de la session de checkout
+    //         } else {
+    //             alert('Failed to create session');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error creating one-time purchase session:', error);
+    //         alert('An error occurred during the purchase process.');
+    //     }
+    // }
 
     return (
         <>
