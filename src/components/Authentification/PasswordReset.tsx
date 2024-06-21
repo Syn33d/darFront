@@ -3,6 +3,7 @@ import './PasswordReset.css';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
+// Composant pour réinitialiser le mot de passe
 function PasswordReset() {
   const [step, setStep] = useState('email'); // 'email' or 'reset'
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ function PasswordReset() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  // Fonction pour gérer la soumission de l'email
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -23,20 +25,23 @@ function PasswordReset() {
     }
   };
 
+  // Fonction pour gérer la soumission du mot de passe
   const handlePasswordSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Vérifie si les mots de passe correspondent
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
     try {
+      // Récupère le token stocké dans le localStorage
       const token = localStorage.getItem('token');
       if (!token) {
         alert('No token found');
         return;
       }
-
-      await axios.post('http://api.dar-site.com/auth/reset-password/confirm', { password, email, token });
+      // Envoie la requête pour réinitialiser le mot de passe
+      await axios.post('https://api.dar-site.com/auth/reset-password/confirm', { password, email, token });
       alert('Password reset successful');
     } catch (error) {
       console.error(error);

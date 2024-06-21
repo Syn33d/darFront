@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-// Simulated data with season and date
+// Liste simulée des magazines
 const magazines = [
   {
     id: 1,
@@ -153,7 +153,7 @@ const magazines = [
   },
 ];
 
-
+// Composant pour afficher les magazines
 const Magazine = () => {
   const [selectedMagazine, setSelectedMagazine] = useState<any>(null);
   const [filteredMagazines, setFilteredMagazines] = useState(magazines);
@@ -166,36 +166,43 @@ const Magazine = () => {
     applyFilters();
   }, [season, name]);
 
+  //Composant pour le bouton "Ouvrir l'article" ou "S'abonner/Acheter"
   const ArticleButton = ({ article }: { article: any }) => {
     const Navigate = useNavigate();
   
+    //Fonction pour gérer le clic sur le bouton "Ouvrir l'article" ou "S'abonner/Acheter"
     const handleButtonClick = () => {
       if (article.isFree) {
         Navigate("/ArticleFree")
       } else {
-        Navigate("/Pricing"); // replace "/Pricing" with your desired path
+        Navigate("/Pricing");
       }
     };
   
     return (
       <button onClick={handleButtonClick}>
+        {/* Remplacez "Open Article" par "S'abonner/Acheter" si l'article n'est pas gratuit */}
         {article.isFree ? 'Open Article' : 'Subscribe/Buy'}
       </button>
     );
   };
 
+  //Fonction pour gérer le clic sur un magazine
   const handleMagazineClick = (magazine: any) => {
     setSelectedMagazine(magazine);
   };
 
+  //Fonction pour fermer la modal
   const handleCloseModal = () => {
     setSelectedMagazine(null);
   };
   
+  //Fonction pour gérer le clic sur le bouton "Devenir membre"
   const handleBecomeMemberClick = () => {
-    Navigate("/Pricing"); // replace "/become-member" with your desired path
+    Navigate("/Pricing"); 
   };
 
+  //Fonction pour gérer le clic sur le bouton "Acheter maintenant"
   const handleBuyNowClick = async () => {
     try {
       const paymentMethod = 'pm_card_visa'; // Replace with the appropriate payment method
@@ -203,6 +210,7 @@ const Magazine = () => {
       const cancelUrl = window.location.origin; // Replace '/checkout' with the route of your choice
       const idMagazine = "price_1PJMkzG3h0hR2My9pBf1gDTh"; // For now, assuming the magazine id is the price id
 
+      // Envoie une requête pour créer une session de paiement unique
       const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
         paymentMethod,
         idMagazine,
@@ -212,7 +220,7 @@ const Magazine = () => {
 
       const { success, session } = response.data;
       if (success && session.url) {
-        window.location.href = session.url; // Redirect user to the checkout session URL
+        window.location.href = session.url; 
       } else {
         alert('Failed to create session');
       }
@@ -222,6 +230,7 @@ const Magazine = () => {
     }
   };
 
+  //Fonction pour filtrer les magazines par saison
   const filterBySeason = (magazineList: any) => {
     if (!season) {
       return magazineList;
@@ -229,6 +238,7 @@ const Magazine = () => {
     return magazineList.filter((magazine: any) => magazine.season === season);
   };
 
+  //Fonction pour filtrer les magazines par nom
   const filterByName = (magazineList: any) => {
     if (!name) {
       return magazineList;
@@ -236,6 +246,7 @@ const Magazine = () => {
     return magazineList.filter((magazine: any) => magazine.title.toLowerCase().includes(name.toLowerCase()));
   };
 
+  //Fonction pour appliquer les filtres
   const applyFilters = () => {
     const magazinesToDisplay = filterByName(filterBySeason(magazines));
     setFilteredMagazines(magazinesToDisplay);
@@ -244,7 +255,8 @@ const Magazine = () => {
   return (
     <>
       <Navbar />
-      <div className={`magazine-container ${selectedMagazine ? 'darkened' : ''}`}>
+      {/* Ajout de la classe 'darkened' pour assombrir l'arrière-plan lorsqu'une modal est ouverte */}
+      <div className={`magazine-container ${selectedMagazine ? 'darkened' : ''}`}> 
         <div className="filters">
           <select value={season} onChange={(e) => setSeason(e.target.value)}>
             <option value="">All Seasons</option>
@@ -278,6 +290,7 @@ const Magazine = () => {
           ))}
         </div>
 
+        {/* Affiche la modal si un magazine est sélectionné */}
         {selectedMagazine && (
           <div className="modal">
             <div className="modal-content">

@@ -10,6 +10,7 @@ declare global {
   }
 }
 
+// Composant pour afficher la page de tarification
 function PricingPage() {
 
   return (

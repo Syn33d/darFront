@@ -9,35 +9,39 @@ const Navbar = () => {
     const [isConnected, setIsConnected] = useState(!!localStorage.getItem('token'));
     const Navigate = useNavigate();
 
+    // Fonction pour gérer la déconnexion de l'utilisateur
     const handleLogout = () => {
-        // Supprimer le token du localStorage
+        // Supprime le token du localStorage
         localStorage.removeItem('token');
 
-        // Mettre à jour l'état isConnected
+        // Met à jour l'état isConnected
         setIsConnected(false);
 
-        // Rediriger l'utilisateur vers la page de connexion
+        // Redirige l'utilisateur vers la page de connexion
         window.location.href = '/Authentification';
     }
 
+    // Fonction pour gérer le clic sur le logo
     const handleLogoClick = () => {
         Navigate('/');
     };
 
     useEffect(() => {
+        // Fonction pour gérer le redimensionnement de la fenêtre
         const handleResize = () => {
-            setIsMediumOrSmaller(window.innerWidth <= 920); // Définissez la largeur limite pour les écrans mobiles
+            setIsMediumOrSmaller(window.innerWidth <= 920); // Définis la largeur limite pour les écrans mobiles
         };
 
-        handleResize(); // Vérifiez la taille de l'écran lors du montage du composant
+        handleResize(); // Vérifie la taille de l'écran lors du montage du composant
 
-        window.addEventListener('resize', handleResize); // Ajoutez un écouteur d'événements pour redimensionner la fenêtre
+        window.addEventListener('resize', handleResize); // Ajoute un écouteur d'événements pour redimensionner la fenêtre
 
         return () => {
-            window.removeEventListener('resize', handleResize); // Nettoyez l'écouteur d'événements lors du démontage du composant
+            window.removeEventListener('resize', handleResize); // Nettoie l'écouteur d'événements lors du démontage du composant
         };
     }, []);
 
+    // Fonction pour basculer le menu burger
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -100,6 +104,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
 
+                            {/* Affiche les boutons de connexion et de déconnexion selon le cas de l'utilisateur */}
                             {isConnected ? (
                                 <ul className="nav-menu">
                                     <li>

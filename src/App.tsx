@@ -18,6 +18,7 @@ loadStripe('pk_live_51PFyI9G3h0hR2My98cpysUelbjSwFFXf6Td14iADtumZlDXTClojCtvekZ3
 function App() {
 
   return (
+    // Router pour gérer la navigation entre les différentes pages
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />

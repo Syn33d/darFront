@@ -1,19 +1,23 @@
 import axios from 'axios';
 
+// Liste des produits disponibles à l'achat (pour le moment on simule les produits, pour la V1 il faudrait faire une recherche dans l'Api à partir de l'id du magazine)
 const products = [
     { id: 1, name: 'Magazine 1', priceId: 'price_1', description: 'Description 1' },
     { id: 2, name: 'Magazine 2', priceId: 'price_2', description: 'Description 2' },
-    // Ajoutez d'autres produits ici
+    // Ajout d'autres produits ici
 ];
 
+// Composant pour gérer les achats uniques
 function SinglePayment() {
+
+    // Fonction pour gérer l'achat d'un produit
     const handlePurchase = async (productId: number) => {
         try {
-            const paymentMethod = 'pm_card_visa'; // Remplacez par la méthode de paiement appropriée
-            const successUrl = window.location.origin ; // Remplacez '/success' par la route de votre choix
-            const cancelUrl = window.location.origin ; // Remplacez '/checkout' par la route de votre choix
+            const paymentMethod = 'pm_card_visa'; 
+            const successUrl = window.location.origin ; 
+            const cancelUrl = window.location.origin ; 
 
-
+            //Envoyer une requête pour créer une session de paiement unique
             const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
                 paymentMethod,
                 idMagazine: productId,
@@ -23,7 +27,7 @@ function SinglePayment() {
 
             const { success, session } = response.data;
             if (success && session.url) {
-                window.location.href = session.url; // Redirige l'utilisateur vers l'URL de la session de checkout
+                window.location.href = session.url; 
             } else {
                 alert('Failed to create session');
             }

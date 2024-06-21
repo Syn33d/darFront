@@ -2,6 +2,7 @@ import "./Contact.css";
 import Footer from "../Footer/Footer.tsx";
 import Navbar from "../Navbar/Navbar.tsx";
 
+// Composant pour afficher le formulaire de contact
 function Contact() {
     return (
         <>

@@ -1,5 +1,6 @@
 import "./Footer.css"
 
+// Composant pour afficher le footer
 const Footer = () => {
     return (
         <footer className="footer">

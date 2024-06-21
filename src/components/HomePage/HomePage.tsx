@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
+// Composant pour la page d'accueil
 const Homepage = () => {
   const articles = [
     { theme: 'GÉNÉRAL', title: 'Découvrez les artistes émergents à suivre cette année', color: '#EED5E4', description: 'Plongez dans notre sélection des jeunes artistes prometteurs qui révolutionnent le monde de l\'art contemporain avec leurs œuvres innovantes et captivantes.' },
@@ -15,15 +15,16 @@ const Homepage = () => {
 
   const Navigate = useNavigate();
 
-
+  //Fonction pour gérer le clic sur le bouton "Acheter maintenant"
   const handleBuyNowClick = async () => {
     try {
-      const paymentMethod = 'pm_card_visa'; // Remplacez par la méthode de paiement appropriée
-      const successUrl = window.location.origin; // Remplacez '/success' par la route de votre choix
-      const cancelUrl = window.location.origin; // Remplacez '/checkout' par la route de votre choix
+      const paymentMethod = 'pm_card_visa'; 
+      const successUrl = window.location.origin; 
+      const cancelUrl = window.location.origin; 
       //Pour le moment on assume que l'id du magazine est le price id, pour la V1 il faudrait faire une recherche dans l'Api à partir de l'id du magazine
       const idMagazine = "price_1PO28DG3h0hR2My9Yq3vE4cn"
 
+      // Envoie une requête pour créer une session de paiement unique
       const response = await axios.post('https://api.dar-site.com/stripe/purchase', {
         paymentMethod,
         idMagazine: idMagazine,
@@ -43,13 +44,14 @@ const Homepage = () => {
     }
   }
 
-  // Function to handle click on the "Devenir membre" button
+  //Fonction pour gérer le clic sur le bouton "Devenir membre"
   const handleBecomeMemberClick = () => {
-    Navigate("/Pricing"); // replace "/become-member" with your desired path
+    Navigate("/Pricing"); 
   }
 
+  //Fonction pour gérer le clic sur le bouton "Magazine"
   const handleMagazineClick = () => {
-    Navigate(`/Magazine`); // replace with your desired path
+    Navigate(`/Magazine`); 
   };
 
   return (

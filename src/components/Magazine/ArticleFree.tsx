@@ -2,6 +2,7 @@ import './ArticleFree.css';
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer';
 
+// Composant pour afficher un article gratuit
 const ArticleFree = () => {
     return (
         <>

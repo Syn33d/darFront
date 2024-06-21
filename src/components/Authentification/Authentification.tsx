@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
+// Vérifie si le mot de passe est fort
 function isPasswordStrong(password: string) {
   const minLength = 12;
   const hasUpperCase = /[A-Z]/.test(password);
@@ -14,11 +15,13 @@ function isPasswordStrong(password: string) {
   return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
 }
 
+// Vérifie si l'email est valide
 function isEmailValid(email: string) {
   const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   return isValid;
 }
 
+// Composant pour l'authentification
 function Authentification() {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState('');
@@ -26,6 +29,7 @@ function Authentification() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
 
+  // Fonction pour gérer le clic sur le bouton de connexion
   const handleLoginClick = () => {
     setIsLogin(true);
     const loginElement = document.getElementById('login') as HTMLInputElement;
@@ -34,6 +38,7 @@ function Authentification() {
     }
   };
 
+  // Fonction pour gérer le clic sur le bouton d'inscription
   const handleSignupClick = () => {
     setIsLogin(false);
     const signupElement = document.getElementById('signup') as HTMLInputElement;
@@ -42,14 +47,18 @@ function Authentification() {
     }
   };
 
+  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Vérifie si l'utilisateur essaie de se connecter
     if (isLogin) {
       try {
+        // Envoie la requête pour se connecter
         const response = await axios.post('https://api.dar-site.com/auth/login', {
           username,
           password
         });
+        // Stocke le token dans le localStorage
         localStorage.setItem('token', response.data.access_token);
         alert('Login successful');
         setTimeout(() => {
@@ -60,26 +69,31 @@ function Authentification() {
         alert('Login failed');
       }
     } else {
+      // Vérifie si les mots de passe correspondent
       if (password !== confirmPassword) {
         alert('Passwords do not match');
         return;
       }
 
+      // Vérifie si l'email est valide
       if (!isEmailValid(username)) {
         alert('Email is not valid');
         return;
       }
       
+      // Vérifie si le mot de passe est fort
       if (!isPasswordStrong(password)) {
         alert('Le mot de passe doit contenir au moins 12 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.');
         return;
       }
 
       try {
+        // Envoie la requête pour créer un nouvel utilisateur
         const response = await axios.post('https://api.dar-site.com/auth/register', {
           username,
           password
         });
+        // Stocke le token dans le localStorage
         localStorage.setItem('token', response.data.access_token);
         alert('Signup successful');
         setTimeout(() => {
@@ -131,7 +145,6 @@ function Authentification() {
               <div className="not_mem">
                 <label htmlFor="signup">Not a member? <a href="#" onClick={handleSignupClick}> Signup now</a></label>
               </div>
-
             </div>
 
             <div className="form_fild signup_form ">
@@ -147,8 +160,8 @@ function Authentification() {
               </div>
 
               <input type="submit" className="btn" value="Signup" />
-
             </div>
+
           </form>
         </div>
       </section>
