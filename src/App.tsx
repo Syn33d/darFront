@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Authentification from "./components/Authentification/Authentification.tsx";
 import PasswordReset from "./components/Authentification/PasswordReset.tsx";
 import PricingPage from "./components/Payment/PricingPage.tsx";
-import SinglePayment from "./components/Payment/SinglePayment.tsx";
 import Account from "./components/Account/MyAccount.tsx";
 import Homepage from "./components/HomePage/HomePage.tsx";
 import Magazine from "./components/Magazine/Magazine.tsx";
@@ -27,7 +26,6 @@ function App() {
         <Route path="/Forgot" element={<PasswordReset />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Pricing" element={<PricingPage />} />
-        <Route path="/Payment" element={<SinglePayment />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Magazine" element={<Magazine />} />
         <Route path="/ArticleFree" element={<ArticleFree />} />
