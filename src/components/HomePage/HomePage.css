@@ -496,6 +496,10 @@
         height: 15vh;
     }
 
+    .articles-row {
+        margin-top: 20px;
+    }
+
     .sections {
         display: flex;
         flex-direction: column;
